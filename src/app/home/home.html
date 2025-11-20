@@ -7,7 +7,7 @@
 </header>
 
 <main class="container">
-    <form class="form" [formGroup]="formulario" (submit)="handleSubmit()">
+    <form class="form" [formGroup]="formulario" >
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Seo</h2>
@@ -47,7 +47,7 @@
 
     <div class="form__result">
         <h2>Preu pressuposat:</h2>
-        <h3>Valor<span>€</span></h3>
+        <h3>{{ result }}<span>€</span></h3>
     </div>
 
 </main>

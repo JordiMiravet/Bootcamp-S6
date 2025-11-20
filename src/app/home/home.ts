@@ -23,8 +23,15 @@ export class HomeComponent {
     })
   }
 
+  result : number = 0;
 
-  handleSubmit(): void {
-    console.log(this.formulario.value);
+  ngOnInit(): void {
+    this.formulario.valueChanges.subscribe((values) => {
+      const Seo = values.Seo ? 300 : 0;
+      const Ads = values.Ads ? 400 : 0;
+      const Web = values.Web ? 500 : 0;
+
+      this.result = Seo + Ads + Web;
+    })
   }
 }

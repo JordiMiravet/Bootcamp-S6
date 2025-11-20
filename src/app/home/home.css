@@ -10,6 +10,7 @@
 .container {
     width: 50%;
     margin: 0 auto;
+    min-width: 50rem;
 }
 
 .form {
@@ -69,4 +70,23 @@
     align-items: center;
     flex-direction: row;
     text-align: right;
+}
+
+/* Result */
+.form__result {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 10rem;
+}
+.form__result h2 {
+
+}
+.form__result h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.form__result span {
+    font-size: 1.25rem;
 }
