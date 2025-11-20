@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   result : number = 0;
-
+  
   ngOnInit(): void {
     this.formulario.valueChanges.subscribe((values) => {
       const Seo = values.Seo ? 300 : 0;

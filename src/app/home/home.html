@@ -1,10 +1,9 @@
-<header class="header"> 
-    <img src="" alt="" class="logo">
-    <h3 class="logo__text">Frontender.itAcademy</h3>
-
-    <img src="" alt="" class="header__image">
-    <h1 class="header__text">Aconsegueix la millor qualitat</h1>
-</header>
+<header class="header">
+    <h3 class="header__logo">Frontender.itAcademy</h3>
+    <div alt="wallpaper of header" class="header__image">
+        <h1 class="header__text">Aconsegueix la millor qualitat</h1>
+    </div>
+</header> <!-- Header -->
 
 <main class="container">
     <form class="form" [formGroup]="formulario" >
@@ -15,11 +14,11 @@
             </div>
             <h3>300 <span>€</span></h3>
             <div class="form__checkgroup">
-                <input type="checkbox" formControlName="Seo" id="formSeo" class="" >
+                <input type="checkbox" formControlName="Seo" id="formSeo" >
                 <label for="formSeo">Afegir</label>
             </div> 
-            
-        </fieldset>
+        </fieldset> <!-- fieldset Seo -->
+
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Ads</h2>
@@ -27,10 +26,11 @@
             </div>
             <h3>400 <span>€</span></h3>
             <div class="form__checkgroup">
-                <input type="checkbox" formControlName="Ads" id="formAds" class="">
+                <input type="checkbox" formControlName="Ads" id="formAds" >
                 <label for="formAds">Afegir</label>
             </div>
-        </fieldset>
+        </fieldset> <!-- fieldset Ads -->
+
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Web</h2>
@@ -38,17 +38,16 @@
             </div>
             <h3>500 <span>€</span></h3>
             <div class="form__checkgroup">
-                <input type="checkbox" formControlName="Web" id="formWeb" class="">
+                <input type="checkbox" formControlName="Web" id="formWeb" >
                 <label for="formWeb">Afegir</label>
             </div>
-        </fieldset>
-        <button>Enviar</button>
-    </form>
+        </fieldset> <!-- fieldset Web -->
+    </form> <!-- form -->
 
     <div class="form__result">
         <h2>Preu pressuposat:</h2>
-        <h3>{{ result }}<span>€</span></h3>
-    </div>
+        <h3>{{ result }} <span>€</span></h3>
+    </div> <!-- form result -->
 
 </main>
 

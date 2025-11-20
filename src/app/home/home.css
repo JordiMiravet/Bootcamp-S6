@@ -1,9 +1,42 @@
 
+
+
 /* Header */
 .header {
+    margin: 0 auto 5rem auto;
+    width: 70%;
+    min-width: 50rem;
+}
+.header__logo{
+    margin: 1.5rem auto;
+    color: #232323;
+    font-size: 1.25rem;
+}
+.header__image {
+    background-image: url('../assets/images/Wallpaper_001.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
     height: 15rem;
-    margin: 0 auto;
-    width: 80%;
+    width: 100%;
+    border-radius: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.header__image:hover{
+    background-size: 105%;
+}
+
+.header__text {
+    position: absolute;
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: clamp(1rem, 3vw, 2rem);
+    text-align: center;
 }
 
 /*Form*/
@@ -11,10 +44,6 @@
     width: 50%;
     margin: 0 auto;
     min-width: 50rem;
-}
-
-.form {
-
 }
 
 .form__group {
@@ -54,39 +83,23 @@
     align-items: center;
     gap: 0.5rem;
 }
-.form__checkgroup label{
-    
-}
-.form__checkgroup input{
-    
-}
-.btn {
-
-}
-
-.form__result {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: row;
-    text-align: right;
-}
 
 /* Result */
 .form__result {
     display: flex;
     justify-content: end;
     align-items: center;
+    flex-direction: row;
     gap: 2rem;
     margin-bottom: 10rem;
-}
-.form__result h2 {
-
 }
 .form__result h3 {
     font-size: 2rem;
     font-weight: 700;
+    min-width: 7.5rem;
+    text-align: right;
 }
 .form__result span {
     font-size: 1.25rem;
+    
 }

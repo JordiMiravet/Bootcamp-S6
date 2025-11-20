@@ -10,3 +10,8 @@ html{
 body{
     font-family: 'Poppins Medium';
 }
+
+img{
+    max-width: 100%;
+    height: auto;
+}
