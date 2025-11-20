@@ -1,0 +1,72 @@
+
+/* Header */
+.header {
+    height: 15rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+/*Form*/
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form {
+
+}
+
+.form__group {
+    background-color: white;
+    box-shadow: 0.0rem 0.0rem 0.75rem 0.25rem rgba(0,0,0,.1);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
+.form__info {
+    width: 50%;
+}
+.form__info h2 {
+    margin: 0;
+}
+.form__info p {
+    width: 85%;
+    margin: 0;
+    font-weight: 500;
+}
+.form__group h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.form__group span {
+    font-size: 1.25rem;
+}
+.form__checkgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.form__checkgroup label{
+    
+}
+.form__checkgroup input{
+    
+}
+.btn {
+
+}
+
+.form__result {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    text-align: right;
+}

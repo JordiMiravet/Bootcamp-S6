@@ -1,0 +1,54 @@
+<header class="header"> 
+    <img src="" alt="" class="logo">
+    <h3 class="logo__text">Frontender.itAcademy</h3>
+
+    <img src="" alt="" class="header__image">
+    <h1 class="header__text">Aconsegueix la millor qualitat</h1>
+</header>
+
+<main class="container">
+    <form class="form" [formGroup]="formulario" (submit)="handleSubmit()">
+        <fieldset class="form__group">
+            <div class="form__info">
+                <h2>Seo</h2>
+                <p>Programació d'una web responsive completa</p>
+            </div>
+            <h3>300 <span>€</span></h3>
+            <div class="form__checkgroup">
+                <input type="checkbox" formControlName="Seo" id="formSeo" class="" >
+                <label for="formSeo">Afegir</label>
+            </div> 
+            
+        </fieldset>
+        <fieldset class="form__group">
+            <div class="form__info">
+                <h2>Ads</h2>
+                <p>Programació d'una web responsive completa</p>
+            </div>
+            <h3>400 <span>€</span></h3>
+            <div class="form__checkgroup">
+                <input type="checkbox" formControlName="Ads" id="formAds" class="">
+                <label for="formAds">Afegir</label>
+            </div>
+        </fieldset>
+        <fieldset class="form__group">
+            <div class="form__info">
+                <h2>Web</h2>
+                <p>Programació d'una web responsive completa</p>
+            </div>
+            <h3>500 <span>€</span></h3>
+            <div class="form__checkgroup">
+                <input type="checkbox" formControlName="Web" id="formWeb" class="">
+                <label for="formWeb">Afegir</label>
+            </div>
+        </fieldset>
+        <button>Enviar</button>
+    </form>
+
+    <div class="form__result">
+        <h2>Preu pressuposat:</h2>
+        <h3>Valor<span>€</span></h3>
+    </div>
+
+</main>
+
