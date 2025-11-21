@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PanelComponent } from "../panel/panel";
+import { BudgetService } from '../services/budget';
+
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,7 @@ export class HomeComponent {
   Ads: FormControl = new FormControl(false);
   Web: FormControl = new FormControl(false);
 
-  constructor(){
+  constructor(private budgetService: BudgetService){
     this.productForm = new FormGroup({
       Seo: this.Seo,
       Ads: this.Ads,
@@ -29,9 +31,9 @@ export class HomeComponent {
   
   ngOnInit(): void {
     this.productForm.valueChanges.subscribe((values) => {
-      const Seo = values.Seo ? 300 : 0;
-      const Ads = values.Ads ? 400 : 0;
-      const Web = values.Web ? 500 : 0;
+      const Seo = values.Seo ? this.budgetService.seoBasePrice : 0;
+      const Ads = values.Ads ? this.budgetService.adsBasePrice : 0;
+      const Web = values.Web ? this.budgetService.webBasePrice : 0;
 
       this.result = Seo + Ads + Web;
     })
