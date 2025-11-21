@@ -1,7 +1,6 @@
 
-
-
 /* Header */
+
 .header {
     margin: 0 auto 5rem auto;
     width: 70%;
@@ -17,7 +16,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: 50% 20%;
-    height: 15rem;
+    height: 17.5rem;
     width: 100%;
     border-radius: 0.75rem;
     position: relative;
@@ -38,29 +37,36 @@
     font-size: clamp(1rem, 3vw, 2rem);
     text-align: center;
 }
+/* Container */
 
-/*Form*/
 .container {
-    width: 50%;
-    margin: 0 auto;
-    min-width: 50rem;
-}
+        width: 35%;
+        margin: 0 auto;
+        min-width: 50rem;
+    }
+    
+/*Form*/
 
 .form__group {
     background-color: white;
     box-shadow: 0.0rem 0.0rem 0.75rem 0.25rem rgba(0,0,0,.1);
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 
     margin-bottom: 1rem;
     padding: 2rem;
     border-radius: 1rem;
     border: none;
 }
+.form__check{
+    border: none;
+}
 .form__info {
-    width: 50%;
+    width: 80%;
 }
 .form__info h2 {
     margin: 0;
@@ -85,6 +91,7 @@
 }
 
 /* Result */
+
 .form__result {
     display: flex;
     justify-content: end;

@@ -6,7 +6,7 @@
 </header> <!-- Header -->
 
 <main class="container">
-    <form class="form" [formGroup]="formulario" >
+    <form class="form" [formGroup]="productForm" >
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Seo</h2>
@@ -41,6 +41,9 @@
                 <input type="checkbox" formControlName="Web" id="formWeb" >
                 <label for="formWeb">Afegir</label>
             </div>
+            @if(productForm.controls['Web']?.value){
+                <app-panel></app-panel>
+            }
         </fieldset> <!-- fieldset Web -->
     </form> <!-- form -->
 
