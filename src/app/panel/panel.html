@@ -1,1 +1,14 @@
-<p>panel works!</p>
+<div [formGroup]="panelForm">
+    <div >
+        <h3>Nombre de pàgines</h3>
+        <button type="button" (click)="updateValues('pages', -1)">-</button>
+        <input type="number" formControlName="pages">
+        <button type="button" (click)="updateValues('pages', +1)">+</button>
+    </div>
+    <div>
+        <h3>Nombre de llenguatges</h3>
+        <button type="button" (click)="updateValues('languages', -1)">-</button>
+        <input type="number" formControlName="languages">
+        <button type="button" (click)="updateValues('languages', +1)">+</button>
+    </div>
+</div>

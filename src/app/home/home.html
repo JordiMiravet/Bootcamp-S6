@@ -42,7 +42,11 @@
                 <label for="formWeb">Afegir</label>
             </div>
             @if(productForm.controls['Web']?.value){
-                <app-panel></app-panel>
+                <app-panel 
+                    [pages]="pages" 
+                    [languages]="languages"  
+                    (valuesChanged)="updatePanelElements($event)">
+                </app-panel>
             }
         </fieldset> <!-- fieldset Web -->
     </form> <!-- form -->

@@ -8,8 +8,12 @@ export class BudgetService {
   adsBasePrice : number = 400;
   webBasePrice : number = 500;
 
-  calculateTotalWeb(){
-    return this.webBasePrice;
+  calculateWebPrices(pages: number, languages:number){
+    return pages * languages * 30;
+  }
+
+  calculateTotalWeb(pages: number, languages:number){
+    return this.webBasePrice + this.calculateWebPrices(pages, languages);
   }
 
   calculateTotal(seoValue : number, adsValues : number, webValues : number){

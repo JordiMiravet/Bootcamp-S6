@@ -19,6 +19,11 @@ export class HomeComponent {
   Ads: FormControl = new FormControl(false);
   Web: FormControl = new FormControl(false);
 
+  pages : number = 1;
+  languages : number = 1;
+
+  result : number = 0;
+
   constructor(private budgetService: BudgetService){
     this.productForm = new FormGroup({
       Seo: this.Seo,
@@ -27,15 +32,26 @@ export class HomeComponent {
     })
   }
 
-  result : number = 0;
+  updatePanelElements(event: { pages: number, languages: number}){
+    this.pages = event.pages;
+    this.languages = event.languages;
+    this.calculateTotal();
+  }
+  
+  calculateTotal(): void{
+    const Seo = this.Seo.value ? this.budgetService.seoBasePrice : 0;
+    const Ads = this.Ads.value ? this.budgetService.adsBasePrice : 0;
+    const Web = this.Web.value 
+      ? this.budgetService.calculateTotalWeb(this.pages, this.languages) 
+      : 0;
+
+    this.result = Seo + Ads + Web;
+  }
   
   ngOnInit(): void {
     this.productForm.valueChanges.subscribe((values) => {
-      const Seo = values.Seo ? this.budgetService.seoBasePrice : 0;
-      const Ads = values.Ads ? this.budgetService.adsBasePrice : 0;
-      const Web = values.Web ? this.budgetService.webBasePrice : 0;
-
-      this.result = Seo + Ads + Web;
+      this.calculateTotal();
     })
   }
+  
 }
