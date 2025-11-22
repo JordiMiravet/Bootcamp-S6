@@ -1,0 +1,57 @@
+:host{
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.panel__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+}
+.panel__group h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.panel__selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: .5rem;
+}
+.panel__selection button {
+    padding: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-grey-light);
+
+    border-radius: 50%;
+    border: 0.01rem solid var(--color-grey-light);
+    transition: border-color .05s ease-out;
+}
+.panel__selection button:active{
+    border-color: var(--color-grey-hard);
+}
+.panel__selection input {
+    width: 4rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.01rem solid var(--color-grey-light);
+    text-align: center;
+    font-size: var(--font-size-md);
+    line-height: 2.5rem;
+
+}

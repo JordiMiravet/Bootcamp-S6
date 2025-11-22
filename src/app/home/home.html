@@ -45,12 +45,13 @@
                 <app-panel 
                     [pages]="pages" 
                     [languages]="languages"  
-                    (valuesChanged)="updatePanelElements($event)">
+                    (valuesChanged)="updatePanelElements($event)"
+                >
                 </app-panel>
             }
         </fieldset> <!-- fieldset Web -->
     </form> <!-- form -->
-
+    
     <div class="form__result">
         <h2>Preu pressuposat:</h2>
         <h3>{{ result }} <span>€</span></h3>
