@@ -12,7 +12,7 @@
                 <h2>Seo</h2>
                 <p>Programació d'una web responsive completa</p>
             </div>
-            <h3>300 <span>€</span></h3>
+            <h3>{{ budgetService.seoBasePrice }} <span>€</span></h3>
             <div class="form__checkgroup">
                 <input type="checkbox" formControlName="Seo" id="formSeo" >
                 <label for="formSeo">Afegir</label>
@@ -24,7 +24,7 @@
                 <h2>Ads</h2>
                 <p>Programació d'una web responsive completa</p>
             </div>
-            <h3>400 <span>€</span></h3>
+            <h3>{{ budgetService.adsBasePrice }} <span>€</span></h3>
             <div class="form__checkgroup">
                 <input type="checkbox" formControlName="Ads" id="formAds" >
                 <label for="formAds">Afegir</label>
@@ -36,9 +36,9 @@
                 <h2>Web</h2>
                 <p>Programació d'una web responsive completa</p>
             </div>
-            <h3>500 <span>€</span></h3>
+            <h3>{{ budgetService.webBasePrice }} <span>€</span></h3>
             <div class="form__checkgroup">
-                <input type="checkbox" formControlName="Web" id="formWeb" >
+                <input type="checkbox" formControlName="Web" id="formWeb" (change)="onWebChange()">
                 <label for="formWeb">Afegir</label>
             </div>
             @if(productForm.controls['Web']?.value){
