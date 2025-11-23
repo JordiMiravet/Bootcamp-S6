@@ -17,6 +17,7 @@ export class PanelComponent {
   @Output() valuesChanged = new EventEmitter<{pages: number, languages: number}>
 
   panelForm : FormGroup;
+  currentHelpButton : 'pages' | 'languages' = 'pages';
 
   constructor(){
     this.panelForm = new FormGroup({

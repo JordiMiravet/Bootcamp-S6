@@ -1,18 +1,57 @@
 <div [formGroup]="panelForm">
-    <div class="panel__group">
-        <h3>Número de pàgines:</h3>
-        <div class="panel__selection">
-            <button type="button" (click)="updateValues('pages', -1)">-</button>
-            <input type="number" formControlName="pages">
-            <button type="button" (click)="updateValues('pages', +1)">+</button>
-        </div>
+  <div class="panel__group" role="group">
+    <div class="panel__info">
+      <button 
+        type="button" 
+        id="pages" 
+        class="panel__btn-info" 
+        data-bs-toggle="modal" 
+        data-bs-target="#helpModal"
+        (click)="currentHelpButton='pages'"
+      >i</button>
+      <h3>Número de pàgines:</h3>
     </div>
-    <div class="panel__group">
-        <h3>Número de llenguatges:</h3>
-        <div class="panel__selection">
-            <button type="button" (click)="updateValues('languages', -1)">-</button>
-            <input type="number" formControlName="languages">
-            <button type="button" (click)="updateValues('languages', +1)">+</button>
-        </div>
+    <div class="panel__selection">
+      <button type="button" (click)="updateValues('pages', -1)">-</button>
+      <input type="number" formControlName="pages">
+      <button type="button" (click)="updateValues('pages', +1)">+</button>
     </div>
-</div>
+  </div>
+  <div class="panel__group" role="group">
+    <div class="panel__info">
+      <button 
+        type="button" 
+        id="languages" 
+        class="panel__btn-info" 
+        data-bs-toggle="modal" 
+        data-bs-target="#helpModal"
+        (click)="currentHelpButton='languages'"
+      >i</button>
+      <h3>Número de llenguatges:</h3>
+    </div>
+    <div class="panel__selection">
+      <button type="button" (click)="updateValues('languages', -1)">-</button>
+      <input type="number" formControlName="languages">
+      <button type="button" (click)="updateValues('languages', +1)">+</button>
+    </div>
+  </div>
+</div> <!-- Panel -->
+
+<div class="modal fade" id="helpModal" tabindex="-1">
+  <div class="modal-dialog"> 
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>{{ currentHelpButton === 'pages' 
+          ? 'Número de pàgines' 
+          : 'Número de llenguatges' }}
+        </h2>
+        <p>{{ currentHelpButton === 'pages' 
+          ? 'Afegeix les pàgines que tindrà el teu projecte' 
+          : 'Afegeix els llenguatges que tindrà el teu projecte' }}
+        </p>
+        <p>Recorda: el cost total es calcula com:</p>
+        <p class="modal-strong">pàgines x llenguatges x 30€</p> 
+      </div>
+    </div>
+  </div>
+</div><!-- Modal -->

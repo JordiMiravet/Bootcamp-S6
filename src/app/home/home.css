@@ -70,7 +70,8 @@
     width: 40%;
 }
 .form__info h2 {
-    margin: 0 auto 0.5rem auto;
+    margin: 0 auto ;
+    font-weight: 700;
 }
 .form__info p {
     width: 85%;
@@ -78,6 +79,7 @@
     font-weight: 500;
     font-size: var(--font-size-md);
     line-height: 1.5rem;
+    
 }
 
 .form__group h3 {
