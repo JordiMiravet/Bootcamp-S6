@@ -29,6 +29,8 @@ export class HomeComponent {
       Seo: this.Seo,
       Ads: this.Ads,
       Web: this.Web,
+      pages: new FormControl(this.pages),
+      languages: new FormControl(this.languages)
     })
   }
 
