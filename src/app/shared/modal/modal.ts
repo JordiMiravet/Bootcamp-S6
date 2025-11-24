@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PanelComponent } from '../../panel/panel';
 
 @Component({
   selector: 'app-modal',
@@ -8,7 +7,7 @@ import { PanelComponent } from '../../panel/panel';
   templateUrl: './modal.html',
   styleUrls: ['./modal.css'],
 })
-export class Modal {
+export class ModalComponent {
   @Input() currentHelpButton: 'pages' | 'languages' = 'pages';
   @Output() helpButton = new EventEmitter<'pages' | 'languages'>();
 

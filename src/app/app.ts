@@ -9,5 +9,5 @@ import { HomeComponent } from './home/home';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Sprint-6');
+
 }
