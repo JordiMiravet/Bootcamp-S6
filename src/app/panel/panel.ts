@@ -1,23 +1,22 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from "@angular/forms";
+import { Modal } from "../shared/modal/modal";
 
 @Component({
   selector: 'app-panel',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, Modal],
   templateUrl: './panel.html',
-  styleUrl: './panel.css',
+  styleUrls: ['./panel.css'],
 })
 
 export class PanelComponent {
 
   @Input() pages: number = 1;
   @Input() languages: number = 1; 
-
   @Output() valuesChanged = new EventEmitter<{pages: number, languages: number}>
 
   panelForm : FormGroup;
-  currentHelpButton : 'pages' | 'languages' = 'pages';
 
   constructor(){
     this.panelForm = new FormGroup({
@@ -41,6 +40,12 @@ export class PanelComponent {
     this.valuesChanged.emit({ 
       pages: this.panelForm.get('pages')?.value,
       languages: this.panelForm.get('languages')?.value
-     });
+    });
+  }
+
+  helpButton : 'pages' | 'languages' = 'pages';
+
+  emitHelpButton(button: 'pages' | 'languages'){
+    this.helpButton = button;
   }
 }

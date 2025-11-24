@@ -63,7 +63,7 @@ export class HomeComponent {
   }
   
   ngOnInit(): void {
-    this.productForm.valueChanges.subscribe((values) => {
+    this.productForm.valueChanges.subscribe(() => {
       this.calculateTotal();
     })
   }
