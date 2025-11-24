@@ -8,13 +8,15 @@ import { ModalComponent } from "../shared/modal/modal";
   imports: [ReactiveFormsModule, ModalComponent],
   templateUrl: './panel.html',
   styleUrls: ['./panel.css'],
+  inputs: ['pages', 'languages'],
+  outputs: ['valuesChanged'],
 })
 
 export class PanelComponent {
 
-  @Input() pages: number = 1;
-  @Input() languages: number = 1; 
-  @Output() valuesChanged = new EventEmitter<{pages: number, languages: number}>
+  pages: number = 1;
+  languages: number = 1; 
+  valuesChanged = new EventEmitter<{pages: number, languages: number}>()
 
   panelForm : FormGroup;
 
