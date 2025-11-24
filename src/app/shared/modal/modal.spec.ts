@@ -43,7 +43,7 @@ describe('ModalComponent', () => {
   });
   
   describe('helpButtonEmit @Input', () => {
-    
+
     it('should emit "pages" when currentHelpButton is "pages"', () => {
       spyOn(component.helpButton, 'emit');
 
