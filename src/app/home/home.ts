@@ -3,12 +3,13 @@ import { ReactiveFormsModule, FormBuilder, FormControl, FormGroup, Validators } 
 import { PanelComponent } from "../panel/panel";
 import { BudgetService } from '../services/budget';
 import { ContactFormComponent } from "../contact-form/contact-form";
+import { HeaderComponent } from '../header/header';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, PanelComponent, ContactFormComponent],
+  imports: [ReactiveFormsModule, PanelComponent, ContactFormComponent, HeaderComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })

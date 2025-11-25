@@ -1,9 +1,4 @@
-<header class="header">
-    <h3 class="header__logo">Frontender.itAcademy</h3>
-    <div alt="wallpaper of header" class="header__image">
-        <h1 class="header__text">Aconsegueix la millor qualitat</h1>
-    </div>
-</header> <!-- Header -->
+<app-header></app-header> <!-- Header Component -->
 
 <main class="container">
     <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
@@ -43,11 +38,7 @@
                 
             </div>
             @if(productForm.controls['Web']?.value){
-                <app-panel 
-                    [pages]="pages" 
-                    [languages]="languages"  
-                    (valuesChanged)="updatePanelElements($event)">
-                </app-panel>
+                <app-panel [pages]="pages" [languages]="languages" (valuesChanged)="updatePanelElements($event)"></app-panel>
             }
         </fieldset>
 
