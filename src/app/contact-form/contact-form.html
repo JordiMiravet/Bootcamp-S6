@@ -1,0 +1,28 @@
+<fieldset class="form__contact"  [formGroup]="formContact">
+    <h3 class="form__title">Demanar pressupost</h3>
+
+    <div class="form__field">
+        <input type="text" formControlName="name" class="form__field-info" placeholder="Noms">
+        <h4 class="form__field-error" [hidden]="formContact.controls['name'].valid || !formContact.controls['name'].touched">
+            Si us plau introdueixi un nom valid
+        </h4>
+    </div>
+
+    <div class="form__field">
+        <input type="number" formControlName="telephone" class="form__field-info" placeholder="Télefon">
+        <h4 class="form__field-error" [hidden]="formContact.controls['telephone'].valid || !formContact.controls['telephone'].touched">
+            Si us plau introdueixi un número de telefon valid
+        </h4>
+    </div>
+
+    <div class="form__field">
+        <input type="email" formControlName="email" class="form__field-info" placeholder="Email">
+        <h4 class="form__field-error" [hidden]="formContact.controls['email'].valid || !formContact.controls['email'].touched">
+            Si us plau introdueixi un correu electronic valid
+        </h4>
+    </div>
+
+    <div class="form__field">
+        <button type="submit" [disabled]="!formContact.valid" class="btn-form">Sol·licitar Pressupost</button>
+    </div>
+</fieldset>

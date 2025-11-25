@@ -1,13 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PanelComponent } from "../panel/panel";
 import { BudgetService } from '../services/budget';
+import { ContactFormComponent } from "../contact-form/contact-form";
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, PanelComponent ],
+  imports: [ReactiveFormsModule, PanelComponent, ContactFormComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
