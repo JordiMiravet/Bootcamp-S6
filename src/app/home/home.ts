@@ -7,17 +7,31 @@ import { BudgetService } from '../services/budget';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, PanelComponent],
+  imports: [ReactiveFormsModule, PanelComponent ],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
 
 export class HomeComponent {
-
+  
   productForm: FormGroup;
   Seo: FormControl = new FormControl(false);
   Ads: FormControl = new FormControl(false);
   Web: FormControl = new FormControl(false);
+
+  name: FormControl = new FormControl('', [
+    Validators.required, 
+    Validators.minLength(3), 
+  ]);
+  telephone: FormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('^[0-9]+$'),
+    Validators.minLength(9)
+  ]);
+  email: FormControl = new FormControl('', [
+    Validators.required,
+    Validators.email
+  ])
 
   pages : number = 1;
   languages : number = 1;
@@ -29,8 +43,13 @@ export class HomeComponent {
       Seo: this.Seo,
       Ads: this.Ads,
       Web: this.Web,
+
       pages: new FormControl(this.pages),
-      languages: new FormControl(this.languages)
+      languages: new FormControl(this.languages),
+
+      name: this.name,
+      telephone: this.telephone,
+      email: this.email,
     })
   }
 
@@ -68,5 +87,11 @@ export class HomeComponent {
     this.productForm.valueChanges.subscribe(() => {
       this.calculateTotal();
     })
+  }
+
+  onSubmit(): void {
+    if(this.productForm.valid){
+      console.log(this.productForm.value)
+    }
   }
 }

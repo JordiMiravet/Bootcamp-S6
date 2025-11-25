@@ -1,8 +1,10 @@
 :root {
     /* Colors */
-    --color-background: #fff;
+    --color-white: #fff;
     --color-grey-light: #a0a0a0;
     --color-grey-hard: #232323;
+    --color-red-light: #9a0000;
+    --color-green-light: #005a15;
 
     /* Spacing */
     --spacing-sm: 1.5rem;

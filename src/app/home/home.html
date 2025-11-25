@@ -6,7 +6,7 @@
 </header> <!-- Header -->
 
 <main class="container">
-    <form class="form" [formGroup]="productForm" >
+    <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Seo</h2>
@@ -40,6 +40,7 @@
             <div class="form__checkgroup">
                 <input type="checkbox" formControlName="Web" id="formWeb" (change)="onWebChange()">
                 <label for="formWeb">Afegir</label>
+                
             </div>
             @if(productForm.controls['Web']?.value){
                 <app-panel 
@@ -50,12 +51,65 @@
                 </app-panel>
             }
         </fieldset> <!-- fieldset Web -->
+
+        <div class="form__result">
+            <h2>Preu pressuposat:</h2>
+            <h3>{{ result }} <span>€</span></h3>
+        </div> <!-- form result -->
+
+        <fieldset class="form__contact">
+            <h3 class="form__title">Demanar pressupost</h3>
+
+            <div class="form__field">
+                <input 
+                    type="text" 
+                    formControlName="name" 
+                    class="form__field-info" 
+                    placeholder="Noms"
+                >
+                @if(name.invalid && name.touched){
+                    <h4 class="form__field-error">Si us plau introdueixi un nom valid</h4>
+                }
+            </div> <!-- Nombre -->
+
+            <div class="form__field">
+                <input 
+                    type="number" 
+                    formControlName="telephone" 
+                    class="form__field-info" 
+                    placeholder="Télefon"
+                >
+                @if(telephone.invalid && telephone.touched){
+                    <h4 class="form__field-error">Si us plau introdueixi un número de telefon valid</h4>
+                }
+            </div> <!-- Teléfono -->
+
+            <div class="form__field">
+                <input 
+                    type="email" 
+                    formControlName="email" 
+                    class="form__field-info" 
+                    placeholder="Email"
+                >
+                @if(email.invalid && email.touched){
+                    <h4 class="form__field-error">Si us plau introdueixi un correu electronic valid</h4>
+                }
+            </div> <!-- Email -->
+
+            <div class="form__field">
+                <button 
+                    type="submit" 
+                    [disabled]="!productForm.valid" 
+                    class="btn-form"
+                >Sol·licitar Pressupost
+                </button>
+            </div> <!-- Botón -->
+        </fieldset>
+
     </form> <!-- form -->
     
-    <div class="form__result">
-        <h2>Preu pressuposat:</h2>
-        <h3>{{ result }} <span>€</span></h3>
-    </div> <!-- form result -->
+    
+
 
 </main>
 
