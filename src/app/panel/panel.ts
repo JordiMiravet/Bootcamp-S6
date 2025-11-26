@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from "@angular/forms";
-import { ModalComponent } from "../shared/modal/modal";
+import { ModalComponent } from "../modal/modal";
 
 @Component({
   selector: 'app-panel',
