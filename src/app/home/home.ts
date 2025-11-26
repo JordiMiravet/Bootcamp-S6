@@ -67,6 +67,7 @@ export class HomeComponent {
     const Web = this.webSelected()
       ? this.budgetService.calculateTotalWeb(this.pages(), this.languages())
       : 0;
+      
     return Seo + Ads + Web;
   });
 

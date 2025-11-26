@@ -6,10 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   imports: [],
   templateUrl: './modal.html',
   styleUrls: ['./modal.css'],
+  inputs: ['currentHelpButton'],
+  outputs: ['helpButton']
 })
+
 export class ModalComponent {
-  @Input() currentHelpButton: 'pages' | 'languages' = 'pages';
-  @Output() helpButton = new EventEmitter<'pages' | 'languages'>();
+  currentHelpButton: 'pages' | 'languages' = 'pages';
+  helpButton = new EventEmitter<'pages' | 'languages'>();
 
   helpButtonEmit() {
     this.helpButton.emit(this.currentHelpButton);

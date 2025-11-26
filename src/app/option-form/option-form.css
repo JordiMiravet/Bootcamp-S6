@@ -1,5 +1,6 @@
+/* Form */
 
-.form__group {
+:host {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +14,7 @@
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
 }
-.form__group:hover {
+:host:hover {
     outline: 2px solid var(--color-grey-light);
 }
 

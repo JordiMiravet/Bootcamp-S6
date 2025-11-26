@@ -1,12 +1,10 @@
-<div class="form__group">
-    <div class="form__info">
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-    </div>
-    <h3>{{ price }}<span>€</span></h3>
-    <div class="form__checkgroup">
-        <input type="checkbox" [formControl]="formName" [id]="title"/>
-        <label [for]="title">Afegir</label>
-    </div>
-    <ng-content></ng-content>
+<div class="form__info">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
 </div>
+<h3>{{ price }}<span>€</span></h3>
+<div class="form__checkgroup">
+    <input type="checkbox" [formControl]="formName" [id]="title"/>
+    <label [for]="title">Afegir</label>
+</div>
+<ng-content></ng-content>

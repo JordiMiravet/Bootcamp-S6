@@ -17,6 +17,7 @@ export class PanelComponent {
   pages: number = 1;
   languages: number = 1; 
   valuesChanged = new EventEmitter<{pages: number, languages: number}>()
+  helpButton : 'pages' | 'languages' = 'pages';
 
   panelForm! : FormGroup;
 
@@ -44,8 +45,6 @@ export class PanelComponent {
       languages: this.panelForm.get('languages')?.value
     });
   }
-
-  helpButton : 'pages' | 'languages' = 'pages';
 
   emitHelpButton(button: 'pages' | 'languages'){
     this.helpButton = button;

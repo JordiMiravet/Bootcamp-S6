@@ -1,5 +1,4 @@
-
-/*Form*/
+/* Form */
 
 .form__group {
     display: flex;
@@ -72,5 +71,3 @@
 .form__result span {
     font-size: 1.25rem;  
 }
-
-/* Form Contact */
