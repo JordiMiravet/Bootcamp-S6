@@ -1,7 +1,40 @@
-<app-header></app-header> <!-- Header Component -->
-
+<app-header></app-header> <!-- Header -->
 <main class="container">
     <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        
+        <app-option-form
+            title="Seo"
+            description="Programació d'una web responsive completa"
+            [price]="budgetService.seoBasePrice"
+            [formName]="seoControl">
+        </app-option-form>
+
+        <app-option-form
+            title="Ads"
+            description="Publicidad online en diversas plataformas"
+            [price]="budgetService.adsBasePrice"
+            [formName]="adsControl">
+        </app-option-form>
+
+        <app-option-form
+            title="Web"
+            description="Creació d'una web responsive i funcional"
+            [price]="budgetService.webBasePrice"
+            [formName]="webControl">
+            @if(productForm.controls['Web']?.value){
+                <app-panel [pages]="pages" [languages]="languages" (valuesChanged)="updatePanelElements($event)"></app-panel>
+            }
+        </app-option-form>
+
+        <h2>{{ result }}</h2>
+
+        <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
+
+    </form> <!-- form -->
+</main>
+
+
+<!--
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Seo</h2>
@@ -12,8 +45,8 @@
                 <input type="checkbox" formControlName="Seo" id="formSeo" >
                 <label for="formSeo">Afegir</label>
             </div> 
-        </fieldset> <!-- fieldset Seo -->
-
+        </fieldset> 
+        
         <fieldset class="form__group">
             <div class="form__info">
                 <h2>Ads</h2>
@@ -24,7 +57,7 @@
                 <input type="checkbox" formControlName="Ads" id="formAds" >
                 <label for="formAds">Afegir</label>
             </div>
-        </fieldset> <!-- fieldset Ads -->
+        </fieldset> 
 
         <fieldset class="form__group">
             <div class="form__info">
@@ -34,20 +67,10 @@
             <h3>{{ budgetService.webBasePrice }} <span>€</span></h3>
             <div class="form__checkgroup">
                 <input type="checkbox" formControlName="Web" id="formWeb" (change)="onWebChange()">
-                <label for="formWeb">Afegir</label>
-                
+                <label for="formWeb">Afegir</label> 
             </div>
             @if(productForm.controls['Web']?.value){
                 <app-panel [pages]="pages" [languages]="languages" (valuesChanged)="updatePanelElements($event)"></app-panel>
             }
         </fieldset>
-
-        <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
-
-    </form> <!-- form -->
-    
-    
-
-
-</main>
-
+        -->
