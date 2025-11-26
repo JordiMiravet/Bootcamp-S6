@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from "@angular/forms";
 import { ModalComponent } from "../shared/modal/modal";
 
@@ -18,7 +18,7 @@ export class PanelComponent {
   languages: number = 1; 
   valuesChanged = new EventEmitter<{pages: number, languages: number}>()
 
-  panelForm : FormGroup;
+  panelForm! : FormGroup;
 
   constructor(){
     this.panelForm = new FormGroup({

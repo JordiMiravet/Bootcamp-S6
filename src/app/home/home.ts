@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header';
-import { ReactiveFormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PanelComponent } from "../panel/panel";
-import { ContactFormComponent } from "../contact-form/contact-form";
-import { BudgetService } from '../services/budget';
+import { Component, computed, signal } from '@angular/core';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OptionForm } from '../option-form/option-form';
+
+import { HeaderComponent } from '../header/header';
+import { BudgetService } from '../services/budget';
+import { ContactFormComponent } from "../contact-form/contact-form";
+import { PanelComponent } from "../panel/panel";
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,86 +16,83 @@ import { OptionForm } from '../option-form/option-form';
     OptionForm,
     ContactFormComponent,
     PanelComponent
-],
+  ],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
-
 export class HomeComponent {
-  
+
   productForm: FormGroup;
-  
-  name: FormControl = new FormControl('', [ Validators.required, Validators.minLength(3) ]);
-  telephone: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(9) ]);
-  email: FormControl = new FormControl('', [ Validators.required, Validators.email ])
 
-  pages : number = 1;
-  languages : number = 1;
+  seoSelected = signal(false);
+  adsSelected = signal(false);
+  webSelected = signal(false);
 
-  result : number = 0;
+  pages = signal(1);
+  languages = signal(1);
 
-  constructor(public budgetService: BudgetService){
+  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  telephone = new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(9)]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  constructor(public budgetService: BudgetService) {
     this.productForm = new FormGroup({
-      Seo: new FormControl(false),
-      Ads: new FormControl(false),
-      Web: new FormControl(false),
+      Seo: new FormControl(this.seoSelected()),
+      Ads: new FormControl(this.adsSelected()),
+      Web: new FormControl(this.webSelected()),
 
-      pages: new FormControl(this.pages),
-      languages: new FormControl(this.languages),
+      pages: new FormControl(this.pages()),
+      languages: new FormControl(this.languages()),
 
       name: this.name,
       telephone: this.telephone,
       email: this.email,
-    })
+    });
+
+    this.productForm.get('Seo')!.valueChanges.subscribe(value => this.seoSelected.set(value));
+    this.productForm.get('Ads')!.valueChanges.subscribe(value => this.adsSelected.set(value));
+    this.productForm.get('Web')!.valueChanges.subscribe(value => this.resetWeb(value));
+
+    this.productForm.get('pages')!.valueChanges.subscribe(value => this.pages.set(value));
+    this.productForm.get('languages')!.valueChanges.subscribe(value => this.languages.set(value));
   }
 
-  get seoControl(): FormControl {
-    return this.productForm.get('Seo') as FormControl;
-  }
+  get seoControl(): FormControl { return this.productForm.get('Seo') as FormControl; }
+  get adsControl(): FormControl { return this.productForm.get('Ads') as FormControl; }
+  get webControl(): FormControl { return this.productForm.get('Web') as FormControl; }
 
-  get adsControl(): FormControl {
-    return this.productForm.get('Ads') as FormControl;
-  }
-
-  get webControl(): FormControl {
-    return this.productForm.get('Web') as FormControl;
-  }
-
-  updatePanelElements(event: { pages: number, languages: number}){
-    this.pages = event.pages;
-    this.languages = event.languages;
-    this.calculateTotal();
-  }
-
-  onWebChange(): void {
-    this.pages = 1;
-    this.languages = 1;
-
-    this.productForm.controls['pages'].setValue(this.pages);
-    this.productForm.controls['languages'].setValue(this.languages);
-
-    this.calculateTotal();
-  }
-
-  calculateTotal(): void{
-    const Seo = this.productForm.get('Seo')!.value ? this.budgetService.seoBasePrice : 0;
-    const Ads = this.productForm.get('Ads')!.value ? this.budgetService.adsBasePrice : 0;
-    const Web = this.productForm.get('Web')!.value 
-      ? this.budgetService.calculateTotalWeb(this.pages, this.languages) 
+  result = computed(() => {
+    const Seo = this.seoSelected() ? this.budgetService.seoBasePrice : 0;
+    const Ads = this.adsSelected() ? this.budgetService.adsBasePrice : 0;
+    const Web = this.webSelected()
+      ? this.budgetService.calculateTotalWeb(this.pages(), this.languages())
       : 0;
+    return Seo + Ads + Web;
+  });
 
-    this.result = Seo + Ads + Web;
+  updatePanelOptions(event: { pages: number; languages: number }) {
+    this.pages.set(event.pages);
+    this.languages.set(event.languages);
+
+    this.productForm.controls['pages'].setValue(event.pages);
+    this.productForm.controls['languages'].setValue(event.languages);
   }
 
-  ngOnInit(): void {
-    this.productForm.valueChanges.subscribe(() => {
-      this.calculateTotal();
-    })
+  resetWeb(value: boolean) {
+    this.webSelected.set(value);
+    if (!value) {
+      this.pages.set(1);
+      this.languages.set(1);
+
+      this.productForm.controls['pages'].setValue(1);
+      this.productForm.controls['languages'].setValue(1);
+    }
   }
 
   onSubmit(): void {
-    if(this.productForm.valid){
-      console.log(this.productForm.value)
+    if (this.productForm.valid) {
+      const budgetElement = { ...this.productForm.value, budget: this.result()}
+      console.log(budgetElement);
     }
   }
 }
