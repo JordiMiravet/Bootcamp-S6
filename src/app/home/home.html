@@ -26,12 +26,12 @@
                 <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
             }
         </app-option-form> <!-- Web form -->
-
-        <h2>{{ result() }}</h2> <!-- Result -->
-
+        
         <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
 
     </form> <!-- form -->
 </main>
 
 <app-budgets-list></app-budgets-list>
+
+<h2>{{ result() }}</h2> <!-- Result -->
