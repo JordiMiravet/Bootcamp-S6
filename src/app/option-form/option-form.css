@@ -2,12 +2,14 @@
 
 :host {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     padding: var(--spacing-md);
+    width: 85%;
+    min-width: 40rem;
     border-radius: var(--border-radius);
     border: 2px solid transparent;
 
@@ -31,7 +33,6 @@
     font-weight: 500;
     font-size: var(--font-size-md);
     line-height: 1.5rem;
-    
 }
 
 .form__group h3 {

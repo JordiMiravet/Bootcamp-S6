@@ -1,6 +1,6 @@
 <app-header></app-header> <!-- Header -->
 
-<main class="container">
+<main>
     <form class="form" [formGroup]="productForm" (ngSubmit)="userBudget()">
         
         <app-option-form
@@ -26,7 +26,7 @@
                 <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
             }
         </app-option-form> <!-- Web form -->
-        
+
         <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
 
     </form> <!-- form -->

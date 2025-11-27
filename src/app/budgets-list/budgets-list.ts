@@ -17,6 +17,5 @@ export class BudgetsList {
   constructor(private budgetService: BudgetService){
     this.budgets.set(this.budgetService.budgets);
   }
-
   
 }
