@@ -2,16 +2,16 @@ import { Component, computed, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OptionForm } from '../option-form/option-form';
 
-import { HeaderComponent } from '../header/header';
-import { BudgetService } from '../services/budget';
+import { HeaderComponent } from '../../../header/header';
+import { BudgetService } from '../../../services/budget';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
-import { BudgetsList } from "../budgets-list/budgets-list";
-import { BudgetItem } from '../models/budget-item.model';
+import { BudgetsList } from "../../budget/budgets-list/budgets-list";
+import { BudgetItem } from '../../../models/budget-item.model';
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-form-main',
   standalone: true,
   imports: [
     HeaderComponent,
@@ -21,11 +21,11 @@ import { BudgetItem } from '../models/budget-item.model';
     PanelComponent,
     BudgetsList
 ],
-  templateUrl: './home.html',
-  styleUrls: ['./home.css'],
+  templateUrl: './form-main.html',
+  styleUrls: ['./form-main.css'],
   inputs: ['userBudget']
 })
-export class HomeComponent {
+export class FormMainComponent {
 
   productForm: FormGroup;
 

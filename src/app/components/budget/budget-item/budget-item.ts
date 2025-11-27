@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { BudgetItem } from '../models/budget-item.model';
+import { BudgetItem } from '../../../models/budget-item.model'
 
 @Component({
   selector: 'app-budget-item',
+  standalone: true,
   imports: [],
   templateUrl: './budget-item.html',
   styleUrls: ['./budget-item.css'],

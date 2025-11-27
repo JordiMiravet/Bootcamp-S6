@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { BudgetItemComponent } from "../budget-item/budget-item";
-import { BudgetService } from '../services/budget';
-import { BudgetItem } from '../models/budget-item.model';
+import { BudgetService } from '../../../services/budget';
+import { BudgetItem } from '../../../models/budget-item.model';
 
 @Component({
   selector: 'app-budgets-list',
