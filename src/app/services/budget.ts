@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { BudgetItem } from '../models/budget-item.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +19,7 @@ export class BudgetService {
     return this.webBasePrice + this.calculateWebPrices(pages, languages);
   }
 
-  saveBudget(budget: any){
+  saveBudget(budget: BudgetItem){
     this.budgets.push(budget);
   }
 }

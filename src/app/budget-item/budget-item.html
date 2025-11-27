@@ -1,0 +1,17 @@
+<div class="budget__info">
+    <h2>{{ budgetItem.name }}</h2>
+    <h3>{{ budgetItem.email }}</h3>
+    <h3>{{ budgetItem.telephone }}</h3>
+</div>
+<div class="budget__service">
+    <h3>Serveis Contractats:</h3>
+    <ul>
+        @for(service of contractedServices(); track $index ) {
+            <li>{{ service }}</li>
+        }
+    </ul>
+</div>
+<div class="budget__price">
+    <h3>Total:</h3>
+    <h2>{{ budgetItem.budget }} <span>€</span></h2>
+</div>

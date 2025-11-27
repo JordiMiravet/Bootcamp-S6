@@ -6,6 +6,8 @@ import { HeaderComponent } from '../header/header';
 import { BudgetService } from '../services/budget';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
+import { BudgetsList } from "../budgets-list/budgets-list";
+import { BudgetItem } from '../models/budget-item.model';
 
 
 @Component({
@@ -16,8 +18,9 @@ import { PanelComponent } from "../panel/panel";
     ReactiveFormsModule,
     OptionForm,
     ContactFormComponent,
-    PanelComponent
-  ],
+    PanelComponent,
+    BudgetsList
+],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
   inputs: ['userBudget']
@@ -96,7 +99,7 @@ export class HomeComponent {
 
   userBudget = () => {
     if (this.productForm.valid) {
-      const budgetElement = { ...this.productForm.value, budget: this.result() }
+      const budgetElement: BudgetItem = { ...this.productForm.value, budget: this.result() }
       console.log(budgetElement);
 
       this.budgetService.saveBudget(budgetElement);
