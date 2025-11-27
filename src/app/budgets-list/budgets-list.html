@@ -1,1 +1,3 @@
-<app-budget-item></app-budget-item>
+@for( budget of budgets(); track $index){
+    <app-budget-item [budgetItem]="budget"></app-budget-item>
+}
