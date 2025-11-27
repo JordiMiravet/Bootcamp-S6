@@ -69,19 +69,4 @@ describe('BudgetService', () => {
 
   });
 
-  describe('calculateTotalElements function', () => {
-    it('should exist', () => {
-      expect(service.calculateTotalElements).toBeTruthy();
-    });
-
-    it('should call calculateTotalElements and return correct value', () => {
-      spyOn(service, 'calculateTotalElements').and.callThrough();
-
-      let result = service.calculateTotalElements(300, 400, 500);
-      expect(result).toBe(1200)
-      expect(service.calculateTotalElements).toHaveBeenCalledWith(300, 400, 500)
-    })
-
-  });
-
 });

@@ -1,7 +1,7 @@
 <app-header></app-header> <!-- Header -->
 
 <main class="container">
-    <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="productForm" (ngSubmit)="userBudget()">
         
         <app-option-form
             title="Seo"
@@ -33,3 +33,5 @@
 
     </form> <!-- form -->
 </main>
+
+<app-budgets-list></app-budgets-list>

@@ -7,6 +7,7 @@ import { BudgetService } from '../services/budget';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -19,6 +20,7 @@ import { PanelComponent } from "../panel/panel";
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
+  inputs: ['userBudget']
 })
 export class HomeComponent {
 
@@ -89,14 +91,15 @@ export class HomeComponent {
 
       this.productForm.controls['pages'].setValue(1);
       this.productForm.controls['languages'].setValue(1);
-
     }
   }
 
-  onSubmit(): void {
+  userBudget = () => {
     if (this.productForm.valid) {
-      const budgetElement = { ...this.productForm.value, budget: this.result()}
+      const budgetElement = { ...this.productForm.value, budget: this.result() }
       console.log(budgetElement);
+
+      this.budgetService.saveBudget(budgetElement);
     }
   }
 }
