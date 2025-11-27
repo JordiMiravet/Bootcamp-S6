@@ -4,6 +4,7 @@
     gap: 1rem;
 
     padding: var(--spacing-md);
+    margin-bottom: 10rem;
     border-radius: var(--border-radius);
     border: 2px solid transparent;
 

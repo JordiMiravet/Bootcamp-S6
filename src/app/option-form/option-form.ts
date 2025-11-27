@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
@@ -7,14 +7,14 @@ import { ReactiveFormsModule, FormControl } from '@angular/forms';
   imports: [ReactiveFormsModule],
   templateUrl: './option-form.html',
   styleUrls: ['./option-form.css'],
+  inputs: ['title', 'description', 'price', 'formName'],
 })
 
 export class OptionForm {
-  @Input() title!: string;
-  @Input() description!: string;
-  @Input() price!: number;
-  @Input() formName!: FormControl;
-
+  title!: string;
+  description!: string;
+  price!: number;
+  formName!: FormControl;
 
   get id(): string {
     return 'option-' + this.title;

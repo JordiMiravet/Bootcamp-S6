@@ -31,6 +31,7 @@ export class HomeComponent {
   pages = signal(1);
   languages = signal(1);
 
+  // pasarlo a signals luego
   name = new FormControl('', [Validators.required, Validators.minLength(3)]);
   telephone = new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(9)]);
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -53,6 +54,7 @@ export class HomeComponent {
     this.productForm.get('Ads')!.valueChanges.subscribe(value => this.adsSelected.set(value));
     this.productForm.get('Web')!.valueChanges.subscribe(value => this.resetWeb(value));
 
+    // modificar luego
     this.productForm.get('pages')!.valueChanges.subscribe(value => this.pages.set(value));
     this.productForm.get('languages')!.valueChanges.subscribe(value => this.languages.set(value));
   }
@@ -87,6 +89,7 @@ export class HomeComponent {
 
       this.productForm.controls['pages'].setValue(1);
       this.productForm.controls['languages'].setValue(1);
+
     }
   }
 
