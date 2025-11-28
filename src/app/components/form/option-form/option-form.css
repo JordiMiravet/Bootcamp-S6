@@ -35,13 +35,14 @@
     line-height: 1.5rem;
 }
 
-.form__group h3 {
+:host h3 {
     width: 25%;
     font-size: var(--font-size-lg);
     font-weight: 700;
     text-align: center;
+    font-size: var(--font-size-lg);
 }
-.form__group span {
+:host span {
     font-size: 1.25rem;
 }
 
@@ -51,4 +52,15 @@
     justify-content: end;
     align-items: center;
     gap: 0.5rem;
+}
+
+@media(min-width:768px){
+    :host {
+        max-width: 65rem;
+    }
+
+
+
+
+
 }

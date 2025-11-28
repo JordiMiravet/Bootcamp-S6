@@ -12,15 +12,19 @@
     --spacing-lg: 5rem;
 
     /* Font sizes */
+    --font-size-ss: 1rem;
     --font-size-sm: 1.15rem;
     --font-size-md: 1.25rem;
+    --font-size-ml: 1.75rem;
     --font-size-lg: 2rem;
+    --font-size-ll: 2.5rem;
 
     /* Border radius */
     --border-radius: 1rem;
     
     /* Box Shadow */
     --box-shadow: 0.0rem 0.0rem 0.75rem 0.25rem rgba(0, 0, 0, 0.1);
+
 }
 
 /* Generals */
@@ -38,6 +42,7 @@ body{
     font-family: 'Poppins Medium';
     overflow: scroll;
     scrollbar-width: none;
+
 }
 body::-webkit-scrollbar {
     display: none;
@@ -53,9 +58,3 @@ h1, h2, h3, h4 {
 }
 
 /* Utilities */
-
-.container {
-    width: 70%;
-    margin: 0 auto;
-    min-width: 50rem;
-}

@@ -6,7 +6,43 @@ import { BudgetItem } from '../models/budget-item.model';
 
 export class BudgetService {
 
-  budgets : any[] = []
+  budgets : any[] = [ 
+
+    // Estos objetos son de prueba, luego he de acordarme de quitarlos ma friendo
+    {
+      Seo: true,
+      Ads: true,
+      Web: true,
+      budget: 1230,
+      email: 'miravet@gmail.com',
+      languages: 1,
+      name: 'Jordi Miravet Madueño',
+      pages: 1,
+      telephone: 678194126
+    },
+    {
+      Seo: true,
+      Ads: true,
+      Web: true,
+      budget: 1260,
+      email: 'Ma.Amaya@gmail.com',
+      languages: 2,
+      name: 'Manuela Madueño Amaya',
+      pages: 1,
+      telephone: 678194126
+    },
+    {
+      Seo: true,
+      Ads: true,
+      Web: false,
+      budget: 700,
+      email: 'Isidro.Miravet@gmail.com',
+      languages: 1,
+      name: 'Isidro Miravet Rubio',
+      pages: 1,
+      telephone: 678194126
+    },
+  ]
 
   seoBasePrice : number = 300;
   adsBasePrice : number = 400;
