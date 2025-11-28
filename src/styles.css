@@ -42,6 +42,8 @@ body{
     font-family: 'Poppins Medium';
     overflow: scroll;
     scrollbar-width: none;
+    margin: 0;
+    padding: 0;
 
 }
 body::-webkit-scrollbar {
@@ -51,6 +53,7 @@ body::-webkit-scrollbar {
 img{
     max-width: 100%;
     height: auto;
+    margin: 0;
 }
 
 h1, h2, h3, h4 {

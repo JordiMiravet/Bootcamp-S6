@@ -1,8 +1,8 @@
 <fieldset class="form__contact"  [formGroup]="formContact">
-    <h3 class="form__title">Demanar pressupost</h3>
+    <h3 class="form__title">Demanar pressupost :</h3>
 
     <div class="form__field">
-        <input type="text" formControlName="name" class="form__field-info" placeholder="Noms">
+        <input type="text" formControlName="name" class="form__field-info" placeholder="Nom">
         <h4 class="form__field-error" [hidden]="formContact.controls['name'].valid || !formContact.controls['name'].touched">
             Si us plau introdueixi un nom valid
         </h4>

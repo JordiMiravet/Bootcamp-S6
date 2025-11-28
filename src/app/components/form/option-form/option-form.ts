@@ -15,9 +15,4 @@ export class OptionForm {
   description!: string;
   price!: number;
   formName!: FormControl;
-
-  get id(): string {
-    return 'option-' + this.title;
-  }
-
 }

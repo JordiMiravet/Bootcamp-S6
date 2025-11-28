@@ -19,7 +19,9 @@ export class BudgetItemComponent {
     if(this.budgetItem.Seo) list.push("Seo");
     if(this.budgetItem.Ads) list.push("Ads");
     if(this.budgetItem.Web){
-      list.push(`Web (${this.budgetItem.pages} pàgines, ${this.budgetItem.languages} llenguatges)`)
+      list.push(`Web (
+        ${this.budgetItem.pages} ${this.budgetItem.pages > 1 ? "pàgines" : "pàgina"}, 
+        ${this.budgetItem.languages} ${this.budgetItem.languages > 1 ? "llenguatges" : "llenguatge"})`)
     }
 
     return list

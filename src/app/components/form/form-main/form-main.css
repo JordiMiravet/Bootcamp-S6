@@ -4,10 +4,8 @@
 }
 
 .line-separator {
-    width: 85%;
     margin: 0 auto 2rem auto;
     border: 0.1rem dashed var(--color-grey-light);
-    border-style: dashed;
     min-width: 45rem;
 }
 
