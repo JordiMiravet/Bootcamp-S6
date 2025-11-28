@@ -1,10 +1,12 @@
-<div class="form__info">
-    <h2>{{ title }}</h2>
-    <p>{{ description }}</p>
+<div class="form__container" [class.checked]="formName.value" >
+    <div class="form__info" (click)="toggleCheckbox()">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+    </div>
+    <h3 (click)="toggleCheckbox()">{{ price }}<span>€</span></h3>
+    <div class="form__checkgroup" (click)="toggleCheckbox()">
+        <input type="checkbox" [formControl]="formName" [id]="title"/>
+        <span>Afegir</span>
+    </div>
+    <ng-content></ng-content>
 </div>
-<h3>{{ price }}<span>€</span></h3>
-<div class="form__checkgroup">
-    <input type="checkbox" [formControl]="formName" [id]="title"/>
-    <label [for]="title">Afegir</label>
-</div>
-<ng-content></ng-content>

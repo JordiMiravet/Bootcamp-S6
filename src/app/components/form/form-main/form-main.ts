@@ -2,8 +2,9 @@ import { Component, computed, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OptionForm } from '../option-form/option-form';
 
-import { HeaderComponent } from '../../../header/header';
 import { BudgetService } from '../../../services/budget';
+
+import { HeaderComponent } from '../../../header/header';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
 import { BudgetsList } from "../../budget/budgets-list/budgets-list";
@@ -42,6 +43,7 @@ export class FormMainComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(public budgetService: BudgetService) {
+    
     this.productForm = new FormGroup({
       Seo: new FormControl(this.seoSelected()),
       Ads: new FormControl(this.adsSelected()),
@@ -54,12 +56,16 @@ export class FormMainComponent {
       telephone: this.telephone,
       email: this.email,
     });
+    
+    this.subscribeFormChanges();
 
+  }
+
+  private subscribeFormChanges(): void {
     this.productForm.get('Seo')!.valueChanges.subscribe(value => this.seoSelected.set(value));
     this.productForm.get('Ads')!.valueChanges.subscribe(value => this.adsSelected.set(value));
     this.productForm.get('Web')!.valueChanges.subscribe(value => this.resetWeb(value));
 
-    // modificar luego
     this.productForm.get('pages')!.valueChanges.subscribe(value => this.pages.set(value));
     this.productForm.get('languages')!.valueChanges.subscribe(value => this.languages.set(value));
   }

@@ -15,4 +15,9 @@ export class OptionForm {
   description!: string;
   price!: number;
   formName!: FormControl;
+
+  toggleCheckbox() {
+    this.formName.setValue(!this.formName.value);
+  }
+
 }

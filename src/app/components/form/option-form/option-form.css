@@ -1,6 +1,6 @@
 /* Form */
 
-:host {
+.form__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,8 +16,9 @@
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
 }
-:host:hover {
-    outline: 2px solid var(--color-grey-light);
+
+.form__container.checked {
+    border-color: var(--color-green-light);
 }
 
 .form__info {
@@ -32,30 +33,36 @@
     margin: 0;
     font-weight: 500;
     font-size: var(--font-size-md);
-    line-height: 1.5rem;
+    line-height: var(--spacing-sm);
 }
 
-:host h3 {
+.form__container h3 {
     width: 25%;
     font-size: var(--font-size-lg);
     font-weight: 700;
     text-align: center;
     font-size: var(--font-size-lg);
 }
-:host span {
-    font-size: 1.25rem;
+.form__container span {
+    font-size: var(--font-size-md);
 }
 
 .form__checkgroup {
     width: 25%;
+    height: auto;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 0.5rem;
 }
+.form__checkgroup input {
+    height: var(--font-size-ml);
+    width: var(--font-size-ml);
 
+    accent-color: var(--color-green-light);
+}
 @media(min-width:768px){
-    :host {
+    .form__container {
         max-width: 65rem;
     }
 }

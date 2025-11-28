@@ -12,7 +12,7 @@
 
         <app-option-form
             title="Ads"
-            description="Publicitat online en diverses plataformes"
+            description="Publicitat online a diverses plataformes"
             [price]="budgetService.adsBasePrice"
             [formName]="adsControl">
         </app-option-form> <!-- Ads form -->
@@ -26,10 +26,11 @@
                 <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
             }
         </app-option-form> <!-- Web form -->
-
+        
         <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
 
     </form> <!-- form -->
+    <h2>{{result()}}</h2>
 </main>
 
 <div class="line-separator"></div>
