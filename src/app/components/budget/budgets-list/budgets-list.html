@@ -2,6 +2,11 @@
     <h2>Pressupostos en curs:</h2>
 </div>
 
+<app-budget-list-toolbar
+    (sortByDate)="sortByDate()"
+    (sortByPrice)="sortByPrice()"
+    (sortByAlphabetically)="sortByAlphabetically()"
+    ></app-budget-list-toolbar>
 
 @for( budget of budgets(); track $index){
     <app-budget-item [budgetItem]="budget"></app-budget-item>

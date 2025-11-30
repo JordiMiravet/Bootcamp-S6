@@ -11,4 +11,5 @@ export interface BudgetItem {
     languages: number;
 
     budget: number;
+    date: string;
 }

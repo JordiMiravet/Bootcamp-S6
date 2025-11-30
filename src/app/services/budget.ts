@@ -14,33 +14,36 @@ export class BudgetService {
       Ads: true,
       Web: true,
       budget: 1230,
-      email: 'miravet@gmail.com',
+      date: '2025-11-28',
+      email: 'j.miravet@gmail.com',
       languages: 1,
       name: 'Jordi Miravet Madueño',
       pages: 1,
-      telephone: 678194126
+      telephone: 655184125
     },
     {
       Seo: true,
       Ads: true,
       Web: true,
       budget: 1260,
+      date: '2025-11-30',
       email: 'Ma.Amaya@gmail.com',
       languages: 2,
       name: 'Manuela Madueño Amaya',
       pages: 1,
-      telephone: 678194126
+      telephone: 683914111
     },
     {
       Seo: true,
       Ads: true,
       Web: false,
       budget: 700,
+      date: '2025-11-25',
       email: 'Isidro.Miravet@gmail.com',
       languages: 1,
       name: 'Isidro Miravet Rubio',
       pages: 1,
-      telephone: 678194126
+      telephone: 678195138
     },
   ]
 

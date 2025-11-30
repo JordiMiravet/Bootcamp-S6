@@ -37,10 +37,22 @@ export class FormMainComponent {
   pages = signal(1);
   languages = signal(1);
 
-  // pasarlo a signals luego
-  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  telephone = new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(9)]);
-  email = new FormControl('', [Validators.required, Validators.email]);
+  name = new FormControl('', [
+    Validators.required, 
+    Validators.minLength(3), 
+    Validators.pattern('[a-zA-Z\s]+$'
+  )]);
+  telephone = new FormControl('', [
+    Validators.required, 
+    Validators.pattern('^([+]?\d{1,2}[-\s]?)?[9|6|7][0-9]{8}$([+]?\d{1,2}[-\s]?)?'), 
+    // Volver a echarle un ojo mas tarde a esta expresion regular, falta el +34 y los espacios, 
+    // Si implemento mas opciones en el telefono talvez luego necesite usar replace para los guiones y espacios
+    Validators.minLength(9)]);
+  email = new FormControl('', [
+    Validators.required, 
+    Validators.email,
+    Validators.pattern(/^[a-zA-Z0-9._-]+([a-zA-Z0-9_-]+)*@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/)
+  ]);
 
   constructor(public budgetService: BudgetService) {
     
@@ -84,7 +96,7 @@ export class FormMainComponent {
     return Seo + Ads + Web;
   });
 
-  updatePanelOptions(event: { pages: number; languages: number }) {
+  updatePanelOptions(event: { pages: number; languages: number }): void {
     this.pages.set(event.pages);
     this.languages.set(event.languages);
 
@@ -105,9 +117,14 @@ export class FormMainComponent {
 
   userBudget = () => {
     if (this.productForm.valid) {
-      const budgetElement: BudgetItem = { ...this.productForm.value, budget: this.result() }
-      console.log(budgetElement);
 
+      const budgetElement: BudgetItem = { 
+        ...this.productForm.value, 
+        date: new Date().toISOString().split('T')[0], 
+        budget: this.result() 
+      }
+
+      console.log(budgetElement);
       this.budgetService.saveBudget(budgetElement);
     }
   }
