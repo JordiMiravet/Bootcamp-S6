@@ -3,6 +3,7 @@
 </div>
 
 <app-budget-list-toolbar
+    (searchByName)="searchByName($event)"
     (sortByDate)="sortByDate()"
     (sortByPrice)="sortByPrice()"
     (sortByAlphabetically)="sortByAlphabetically()"

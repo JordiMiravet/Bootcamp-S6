@@ -8,16 +8,15 @@ export class BudgetService {
 
   budgets : any[] = [ 
 
-    // Estos objetos son de prueba, luego he de acordarme de quitarlos ma friendo
     {
       Seo: true,
       Ads: true,
       Web: true,
       budget: 1230,
-      date: '2025-11-28',
-      email: 'j.miravet@gmail.com',
+      date: '2025-11-26',
+      email: 'f.lorca@gmail.com',
       languages: 1,
-      name: 'Jordi Miravet Madueño',
+      name: 'Federico García Lorca',
       pages: 1,
       telephone: 655184125
     },
@@ -26,10 +25,10 @@ export class BudgetService {
       Ads: true,
       Web: true,
       budget: 1260,
-      date: '2025-11-30',
-      email: 'Ma.Amaya@gmail.com',
+      date: '2025-11-25',
+      email: 'a.machado@gmail.com',
       languages: 2,
-      name: 'Manuela Madueño Amaya',
+      name: 'Antonio Machado',
       pages: 1,
       telephone: 683914111
     },
@@ -38,12 +37,60 @@ export class BudgetService {
       Ads: true,
       Web: false,
       budget: 700,
-      date: '2025-11-25',
-      email: 'Isidro.Miravet@gmail.com',
+      date: '2025-11-27',
+      email: 'Luis.G@gmail.com',
       languages: 1,
-      name: 'Isidro Miravet Rubio',
+      name: 'Luis de Góngora',
       pages: 1,
       telephone: 678195138
+    },
+    {
+      Seo: true,
+      Ads: true,
+      Web: true,
+      budget: 1320,
+      date: '2025-11-27',
+      email: 'G.A.Becq@gmail.com',
+      languages: 4,
+      name: 'Gustavo Adolfo Becquer',
+      pages: 1,
+      telephone: 677385582
+    },
+    {
+      Seo: true,
+      Ads: false,
+      Web: true,
+      budget: 920,
+      date: '2025-11-28',
+      email: 'G.A.Becq@gmail.com',
+      languages: 4,
+      name: 'Gustavo Adolfo Becquer',
+      pages: 1,
+      telephone: 677385582
+    },
+    {
+      Seo: false,
+      Ads: true,
+      Web: true,
+      budget: 1020,
+      date: '2025-11-29',
+      email: 'G.A.Becq@gmail.com',
+      languages: 4,
+      name: 'Gustavo Adolfo Becquer',
+      pages: 1,
+      telephone: 677385582
+    },
+    {
+      Seo: true,
+      Ads: true,
+      Web: false,
+      budget: 700,
+      date: '2025-11-30',
+      email: 'a.machado@gmail.com',
+      languages: 1,
+      name: 'Antonio Machado',
+      pages: 1,
+      telephone: 683914111
     },
   ]
 

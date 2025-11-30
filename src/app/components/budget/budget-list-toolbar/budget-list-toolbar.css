@@ -28,6 +28,12 @@ button:focus::after{
     font-size: var(--font-size-sm);
 }
 
+.input-text {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-grey-light);
+}
+
 @media(min-width: 768px){
     :host {
         width: 65rem;

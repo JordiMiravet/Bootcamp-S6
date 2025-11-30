@@ -15,13 +15,15 @@ import { BudgetListToolbarComponent } from "../budget-list-toolbar/budget-list-t
 export class BudgetsList {
   
   budgets = signal<BudgetItem[]>([]);
+  originalBudgets: BudgetItem[] = [];
 
   constructor(private budgetService: BudgetService){
+    this.originalBudgets = this.budgetService.budgets;
     this.budgets.set(this.budgetService.budgets);
   }
 
   sortByDate(){
-    const newOrder = [...this.budgets()].sort((a, b) => a.date.localeCompare(b.date))
+    const newOrder = [...this.budgets()].sort((a, b) => b.date.localeCompare(a.date))
     this.budgets.set(newOrder)
   }
 
@@ -35,4 +37,12 @@ export class BudgetsList {
     this.budgets.set(newOrder)
   }
   
+  searchByName(searchText: string){
+    if(!searchText) {
+      this.budgets.set(this.originalBudgets)
+    } else {
+      const filteredName = this.originalBudgets.filter((value) => value.name.toLowerCase().includes(searchText.toLowerCase()))
+      this.budgets.set(filteredName)
+    }
+  }
 }

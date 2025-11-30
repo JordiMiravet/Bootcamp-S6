@@ -1,3 +1,6 @@
+:host {
+    margin-bottom: 20rem;
+}
 .budgets__info {
     width: 85%;
     margin: 0 auto;
