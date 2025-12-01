@@ -41,8 +41,6 @@ export class FormMainComponent {
   telephone = new FormControl('', [
     Validators.required, 
     Validators.pattern('^([+]?\d{1,2}[-\s]?)?[9|6|7][0-9]{8}$([+]?\d{1,2}[-\s]?)?'), 
-    // Volver a echarle un ojo mas tarde a esta expresion regular, falta el +34 y los espacios, 
-    // Si implemento mas opciones en el telefono talvez luego necesite usar replace para los guiones y espacios
     Validators.minLength(9)]);
   email = new FormControl('', [
     Validators.required, 
@@ -51,7 +49,6 @@ export class FormMainComponent {
   ]);
 
   constructor(public budgetService: BudgetService) {
-    
     this.productForm = new FormGroup({
       Seo: new FormControl(this.seoSelected()),
       Ads: new FormControl(this.adsSelected()),

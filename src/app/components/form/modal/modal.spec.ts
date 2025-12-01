@@ -61,7 +61,5 @@ describe('ModalComponent', () => {
 
       expect(component.helpButton.emit).toHaveBeenCalledWith('languages');
     });
-
   });
-  
 });

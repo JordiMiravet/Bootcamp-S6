@@ -18,7 +18,7 @@ export class BudgetService {
       languages: 1,
       name: 'Federico García Lorca',
       pages: 1,
-      telephone: 655184125
+      telephone: '655184125'
     },
     {
       Seo: true,
@@ -30,7 +30,7 @@ export class BudgetService {
       languages: 2,
       name: 'Antonio Machado',
       pages: 1,
-      telephone: 683914111
+      telephone: '683914111'
     },
     {
       Seo: true,
@@ -42,7 +42,7 @@ export class BudgetService {
       languages: 1,
       name: 'Luis de Góngora',
       pages: 1,
-      telephone: 678195138
+      telephone: '678195138'
     },
     {
       Seo: true,
@@ -54,7 +54,7 @@ export class BudgetService {
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
       pages: 1,
-      telephone: 677385582
+      telephone: '677385582'
     },
     {
       Seo: true,
@@ -66,7 +66,7 @@ export class BudgetService {
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
       pages: 1,
-      telephone: 677385582
+      telephone: '677385582'
     },
     {
       Seo: false,
@@ -78,7 +78,7 @@ export class BudgetService {
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
       pages: 1,
-      telephone: 677385582
+      telephone: '677385582'
     },
     {
       Seo: true,
@@ -90,7 +90,7 @@ export class BudgetService {
       languages: 1,
       name: 'Antonio Machado',
       pages: 1,
-      telephone: 683914111
+      telephone: '683914111'
     },
   ]
 
