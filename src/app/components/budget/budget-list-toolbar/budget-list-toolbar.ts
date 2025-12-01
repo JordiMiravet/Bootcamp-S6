@@ -2,6 +2,7 @@ import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-budget-list-toolbar',
+  standalone: true,
   imports: [],
   templateUrl: './budget-list-toolbar.html',
   styleUrls: [ './budget-list-toolbar.css' ],

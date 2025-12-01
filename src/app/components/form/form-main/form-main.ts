@@ -4,10 +4,8 @@ import { OptionForm } from '../option-form/option-form';
 
 import { BudgetService } from '../../../services/budget';
 
-import { HeaderComponent } from '../../../header/header';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
-import { BudgetsList } from "../../budget/budgets-list/budgets-list";
 import { BudgetItem } from '../../../models/budget-item.model';
 
 
@@ -15,12 +13,10 @@ import { BudgetItem } from '../../../models/budget-item.model';
   selector: 'app-form-main',
   standalone: true,
   imports: [
-    HeaderComponent,
     ReactiveFormsModule,
     OptionForm,
     ContactFormComponent,
     PanelComponent,
-    BudgetsList
 ],
   templateUrl: './form-main.html',
   styleUrls: ['./form-main.css'],

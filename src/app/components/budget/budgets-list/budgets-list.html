@@ -7,7 +7,7 @@
     (sortByDate)="sortByDate()"
     (sortByPrice)="sortByPrice()"
     (sortByAlphabetically)="sortByAlphabetically()"
-    ></app-budget-list-toolbar>
+></app-budget-list-toolbar>
 
 @for( budget of budgets(); track $index){
     <app-budget-item [budgetItem]="budget"></app-budget-item>

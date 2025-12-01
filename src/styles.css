@@ -14,6 +14,7 @@
     --spacing-sm: 1.5rem;
     --spacing-md: 2rem;
     --spacing-lg: 5rem;
+    --spacing-block: 0 auto 1rem auto;
 
     /* Font sizes */
     --font-size-ss: 1rem;

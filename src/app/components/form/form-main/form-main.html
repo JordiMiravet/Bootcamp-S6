@@ -1,4 +1,4 @@
-<app-header></app-header> <!-- Header -->
+<!-- <app-header></app-header> Header -->
 
 <main>
     <form class="form" [formGroup]="productForm" (ngSubmit)="userBudget()">
@@ -26,16 +26,21 @@
                 <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
             }
         </app-option-form> <!-- Web form -->
+
+        <div class="budget__total">
+            <h2>Preu pressuposat:</h2>
+            <h3>{{result()}}<span>€</span></h3>
+        </div>
         
         <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
-
+        
     </form> <!-- form -->
-    <h2>{{result()}}</h2>
+
 </main>
 
 <div class="line-separator"></div>
 
-<app-budgets-list></app-budgets-list>
+
 
 
 
