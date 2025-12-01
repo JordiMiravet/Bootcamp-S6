@@ -5,7 +5,7 @@
     </div>
     <h3 (click)="toggleCheckbox()">{{ price }}<span>€</span></h3>
     <div class="form__checkgroup" (click)="toggleCheckbox()">
-        <input type="checkbox" [formControl]="formName" [id]="title"/>
+        <input type="checkbox" [formControl]="formName" [id]="title" [attr.aria-label]="title + ', ' + description"/>
         <span>Afegir</span>
     </div>
     <ng-content></ng-content>

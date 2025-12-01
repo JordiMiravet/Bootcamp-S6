@@ -1,37 +1,29 @@
-<div [formGroup]="panelForm">
-  <div class="panel__group" role="group">
+<div [formGroup]="panelForm" role="form">
+  <div class="panel__group" role="group" aria-labelledby="pagesLabel" aria-describedby="pagesDesc">
     <div class="panel__info">
-      <button 
-        type="button" 
-        class="panel__btn-info" 
-        data-bs-toggle="modal" 
-        data-bs-target="#helpModal"
-        (click)="emitHelpButton('pages')"
+      <button type="button" class="panel__btn-info" data-bs-toggle="modal" data-bs-target="#helpModal" (click)="emitHelpButton('pages')" aria-label="Informació sobre número de pàgines"
       >i</button>
-      <h3>Número de pàgines:</h3>
+      <h3 id="pagesLabel">Número de pàgines:</h3>
+      <p id="pagesDesc" class="visually-hidden">Afegeix les pàgines que tindrà el teu projecte</p>
     </div>
     <div class="panel__selection">
-      <button type="button" (click)="updateValues('pages', -1)">-</button>
-      <input type="number" formControlName="pages">
-      <button type="button" (click)="updateValues('pages', +1)">+</button>
+      <button type="button" (click)="updateValues('pages', -1)" aria-label="Restar una pàgina">-</button>
+      <input type="number" formControlName="pages" aria-labelledby="pagesLabel" aria-describedby="pagesDesc">
+      <button type="button" (click)="updateValues('pages', +1)" aria-label="Afegir una pàgina">+</button>
     </div>
   </div> <!-- Pages -->
 
-  <div class="panel__group" role="group">
+  <div class="panel__group" role="group" aria-labelledby="languagesLabel" aria-describedby="languagesDesc">
     <div class="panel__info">
-      <button 
-        type="button" 
-        class="panel__btn-info" 
-        data-bs-toggle="modal" 
-        data-bs-target="#helpModal"
-        (click)="emitHelpButton('languages')"
+      <button type="button" class="panel__btn-info" data-bs-toggle="modal" data-bs-target="#helpModal" (click)="emitHelpButton('languages')" aria-label="Informació sobre número de llenguatges"
       >i</button>
-      <h3>Número de llenguatges:</h3>
+      <h3 id="languagesLabel">Número de llenguatges:</h3>
+      <p id="languagesDesc" class="visually-hidden">Afegeix els llenguatges que tindrà el teu projecte</p>
     </div>
     <div class="panel__selection">
-      <button type="button" (click)="updateValues('languages', -1)">-</button>
-      <input type="number" formControlName="languages">
-      <button type="button" (click)="updateValues('languages', +1)">+</button>
+      <button type="button" (click)="updateValues('languages', -1)" aria-label="Restar un llenguatge">-</button>
+      <input type="number" formControlName="languages" aria-labelledby="languagesLabel" aria-describedby="languagesDesc">
+      <button type="button" (click)="updateValues('languages', +1)" aria-label="Afegir un llenguatge">+</button>
     </div>
   </div>
 </div> <!-- Languages -->

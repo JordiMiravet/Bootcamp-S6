@@ -1,19 +1,18 @@
-<div class="budget__info">
-    <h2>{{ budgetItem.name }}</h2>
-    <h3>{{ budgetItem.email }}</h3>
+<div class="budget__info" role="region" aria-labelledby="budgetName" aria-describedby="budgetDetails">
+    <h2 id="budgetName">{{ budgetItem.name }}</h2>
+    <h3 id="budgetDetails">{{ budgetItem.email }}</h3>
     <h3>{{ budgetItem.telephone }}</h3>
     <h3>{{ budgetItem.date }}</h3>
 </div>
-<div class="budget__service">
-    <h3>Serveis Contractats:</h3>
+<div class="budget__service" role="region" aria-labelledby="servicesLabel">
+    <h3 id="servicesLabel">Serveis Contractats:</h3>
     <ul>
         @for(service of contractedServices(); track $index ) {
             <li>{{ service }}</li>
         }
     </ul>
 </div>
-<div class="budget__price">
-    <h3>Total:</h3>
-    <h2>{{ budgetItem.budget }}<span>€</span></h2>
-    
+<div class="budget__price" role="region" aria-labelledby="totalLabel">
+    <h3 id="totalLabel">Total:</h3>
+    <h2 aria-label="{{ budgetItem.budget }} euros">{{ budgetItem.budget }}<span>€</span></h2>
 </div>

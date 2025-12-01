@@ -1,12 +1,19 @@
-<div class="modal fade" id="helpModal" tabindex="-1">
+<div 
+  class="modal fade" 
+  id="helpModal" 
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="helpModalTitle" 
+  aria-describedby="helpModalDesc"
+>
   <div class="modal-dialog"> 
     <div class="modal-content">
       <div class="modal-body">
-        <h2>{{ currentHelpButton === 'pages' 
+        <h2 id="helpModalTitle">{{ currentHelpButton === 'pages' 
           ? 'Número de pàgines' 
           : 'Número de llenguatges' }}
         </h2>
-        <p>{{ currentHelpButton === 'pages' 
+        <p id="helpModalDesc">{{ currentHelpButton === 'pages' 
           ? 'Afegeix les pàgines que tindrà el teu projecte' 
           : 'Afegeix els llenguatges que tindrà el teu projecte' }}
         </p>

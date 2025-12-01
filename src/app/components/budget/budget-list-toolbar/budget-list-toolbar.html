@@ -1,6 +1,6 @@
 
-<input type="text" (input)="onSortByName($event)" class="input-text" placeholder="Nom">
+<input type="text" (input)="onSortByName($event)" class="input-text" placeholder="Nom" aria-label="Filtrar pressupostos per nom" role="search">
     
-<button type="button" (click)="onSortByDate()">Data</button>
-<button type="button" (click)="onSortByPrice()">Import</button>
-<button type="button" (click)="onSortByAlphabetically()">Nom</button>
+<button type="button" (click)="onSortByDate()" aria-label="Ordenar pressupostos per data">Data</button>
+<button type="button" (click)="onSortByPrice()" aria-label="Ordenar pressupostos per import">Import</button>
+<button type="button" (click)="onSortByAlphabetically()" aria-label="Ordenar pressupostos alfabèticament per nom">Nom</button>
