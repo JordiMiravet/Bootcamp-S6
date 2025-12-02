@@ -153,9 +153,47 @@ Tras iniciar la aplicación, el usuario puede:
 
 ## Tests
 
-Incluye pruebas unitarias con Jasmine/Karma verificando:
+La aplicación incluye pruebas unitarias con `Jasmine` y se ejecutan mediante `Karma`.  
 
-// Ahora lo pongo cuando acabe las otras secciones, que no me da la vida xD
+#### Resumen
+- `40 specs` ejecutadas
+- `0 fallos`
+- Componentes principales testeados:
+  - `BudgetItemComponent`
+  - `BudgetListToolbarComponent`
+  - `PanelComponent`
+  - `FormMainComponent`
+  - `OptionForm`
+  - `HomeComponent`
+  - `BudgetsList`
+  - `ContactFormComponent`
+  - `ModalComponent`
+
+#### Ejemplo destacado
+
+Se verifica que el cálculo del presupuesto se actualice de forma reactiva al seleccionar opciones en `FormMainComponent`:
+
+```ts
+it('should calculate total price reactive to selected options', () => {
+    component.seoControl.setValue(true);
+    component.adsControl.setValue(true);
+    component.webControl.setValue(true);
+
+    const expectedTotal = 
+        component.budgetService.seoBasePrice + 
+        component.budgetService.adsBasePrice + 
+        component.budgetService.calculateTotalWeb(component.pages(), component.languages())
+
+    expect(component.result()).toEqual(expectedTotal);
+});
+
+#### Ejecutar test
+
+- Para correr todos los tests locales:
+
+```bash
+    ng test
+```
 
 ---
 
