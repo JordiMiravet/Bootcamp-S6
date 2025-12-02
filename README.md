@@ -96,21 +96,25 @@ src/
 ## Vista Previa del proyecto
 
 1. Selección de servicios y cálculo
+![form calc](assets/README/rm_001_form-calc.gif)
 
-2. Panel de páginas e idiomas
+2. Modal de ayuda
+![form modal](assets/README/rm_002_modal.gif)
 
-3. Modal de ayuda
-
-4. Datos del usuario
+3. Datos del usuario
+![form user](assets/README/rm_003_form-user.gif)
 
 4. Listado ordenable 
-- Mediante input para filtrar por nombre
+- Mediante input : 
+    - Para filtrar por nombre
 - Mediante botones:
     - 'Data' : Para ordenar por calendario, 
     - 'Import' : Para ordenar por importe total (€)
     - 'Nombre' : Para ordenar por nombre
+![budget toolbar](assets/README/rm_004_budge.gif)
 
-6. URL compartible
+5. URL compartible
+![budget url](assets/README/rm_005_url.gif)
 
 ---
 
