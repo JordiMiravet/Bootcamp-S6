@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-option-form',
+  selector: '[option-form]',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './option-form.html',

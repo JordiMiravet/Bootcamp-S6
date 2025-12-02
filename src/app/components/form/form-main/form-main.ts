@@ -1,16 +1,17 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
-import { OptionForm } from '../option-form/option-form';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { BudgetService } from '../../../services/budget';
 
+import { OptionForm } from '../option-form/option-form';
 import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
 import { BudgetItem } from '../../../models/budget-item.model';
 
 
 @Component({
-  selector: 'app-form-main',
+  selector: '[form-main]',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -20,9 +21,8 @@ import { BudgetItem } from '../../../models/budget-item.model';
 ],
   templateUrl: './form-main.html',
   styleUrls: ['./form-main.css'],
-  inputs: ['userBudget']
 })
-export class FormMainComponent {
+export class FormMainComponent implements OnInit {
 
   productForm: FormGroup;
 
@@ -36,8 +36,8 @@ export class FormMainComponent {
   name = new FormControl('', [
     Validators.required, 
     Validators.minLength(3), 
-    Validators.pattern('[a-zA-Z\s]+$'
-  )]);
+    Validators.pattern('[a-zA-Z\s]+$')
+  ]);
   telephone = new FormControl('', [
     Validators.required, 
     Validators.pattern('^([+]?\d{1,2}[-\s]?)?[9|6|7][0-9]{8}$([+]?\d{1,2}[-\s]?)?'), 
@@ -48,7 +48,11 @@ export class FormMainComponent {
     Validators.pattern(/^[a-zA-Z0-9._-]+([a-zA-Z0-9_-]+)*@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/)
   ]);
 
-  constructor(public budgetService: BudgetService) {
+  constructor(
+    public budgetService: BudgetService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.productForm = new FormGroup({
       Seo: new FormControl(this.seoSelected()),
       Ads: new FormControl(this.adsSelected()),
@@ -73,13 +77,27 @@ export class FormMainComponent {
 
     this.productForm.get('pages')!.valueChanges.subscribe(value => this.pages.set(value));
     this.productForm.get('languages')!.valueChanges.subscribe(value => this.languages.set(value));
-  }
 
+
+  this.productForm.valueChanges.subscribe(form => {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        Seo: form.Seo,
+        Ads: form.Ads,
+        Web: form.Web,
+        pages: form.pages,
+        languages: form.languages
+      },
+      queryParamsHandling: 'merge'
+    });
+  });
+}
   get seoControl(): FormControl { return this.productForm.get('Seo') as FormControl; }
   get adsControl(): FormControl { return this.productForm.get('Ads') as FormControl; }
   get webControl(): FormControl { return this.productForm.get('Web') as FormControl; }
 
-  result = computed(() => {
+  result = computed(() : number => {
     const Seo = this.seoSelected() ? this.budgetService.seoBasePrice : 0;
     const Ads = this.adsSelected() ? this.budgetService.adsBasePrice : 0;
     const Web = this.webSelected()
@@ -97,7 +115,7 @@ export class FormMainComponent {
     this.productForm.controls['languages'].setValue(event.languages);
   }
 
-  resetWeb(value: boolean) {
+  resetWeb(value: boolean) : void {
     this.webSelected.set(value);
     if (!value) {
       this.pages.set(1);
@@ -108,7 +126,7 @@ export class FormMainComponent {
     }
   }
 
-  userBudget = () => {
+  userBudget = () : void => {
     if (this.productForm.valid) {
 
       const budgetElement: BudgetItem = { 
@@ -120,5 +138,18 @@ export class FormMainComponent {
       console.log(budgetElement);
       this.budgetService.saveBudget(budgetElement);
     }
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe( params => {
+      const formValues = {
+        Seo: params['Seo'] === 'true',
+        Ads: params['Ads'] === 'true',
+        Web: params['Web'] === 'true',
+        pages: params['pages'] ? Number(params['pages']) : 1,
+        languages: params['languages'] ? Number(params['languages']) : 1
+      };
+      this.productForm.patchValue(formValues);
+    })
   }
 }

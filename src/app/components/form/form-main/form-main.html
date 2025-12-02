@@ -1,42 +1,38 @@
-<!-- <app-header></app-header> Header -->
 
-<main>
-    <form class="form" [formGroup]="productForm" (ngSubmit)="userBudget()">
-        
-        <app-option-form
-            title="Seo"
-            description="Programació d'una web responsive completa"
-            [price]="budgetService.seoBasePrice"
-            [formName]="seoControl">
-        </app-option-form> <!-- Seo form -->
+<form class="form" [formGroup]="productForm" (ngSubmit)="userBudget()">
+    
+    <fieldset option-form
+        title="Seo"
+        description="Programació d'una web responsive completa"
+        [price]="budgetService.seoBasePrice"
+        [formName]="seoControl">
+    </fieldset> <!-- Seo form -->
 
-        <app-option-form
-            title="Ads"
-            description="Publicitat online a diverses plataformes"
-            [price]="budgetService.adsBasePrice"
-            [formName]="adsControl">
-        </app-option-form> <!-- Ads form -->
+    <fieldset option-form
+        title="Ads"
+        description="Publicitat online a diverses plataformes"
+        [price]="budgetService.adsBasePrice"
+        [formName]="adsControl">
+    </fieldset> <!-- Ads form -->
 
-        <app-option-form
-            title="Web"
-            description="Creació d'una web responsive i funcional"
-            [price]="budgetService.webBasePrice"
-            [formName]="webControl">
-            @if(productForm.controls['Web']?.value){
-                <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
-            }
-        </app-option-form> <!-- Web form -->
+    <fieldset option-form
+        title="Web"
+        description="Creació d'una web responsive i funcional"
+        [price]="budgetService.webBasePrice"
+        [formName]="webControl">
+        @if(productForm.controls['Web']?.value){
+            <app-panel [pages]="pages()" [languages]="languages()" (valuesChanged)="updatePanelOptions($event)"></app-panel>
+        }
+    </fieldset> <!-- Web form -->
 
-        <div class="budget__total" aria-live="polite">
-            <h2>Preu pressuposat:</h2>
-            <h3>{{result()}}<span>€</span></h3>
-        </div>
-        
-        <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
-        
-    </form> <!-- form -->
-
-</main>
+    <div class="budget__total" aria-live="polite">
+        <h2>Preu pressuposat:</h2>
+        <h3>{{result()}}<span>€</span></h3>
+    </div>
+    
+    <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
+    
+</form> <!-- form -->
 
 <div class="line-separator"></div>
 

@@ -5,7 +5,7 @@
 
     padding: var(--spacing-md);
     margin: 0 auto 2.5rem auto;
-    width: 85%;
+    width: 100%;
     min-width: 40rem;
     border-radius: var(--border-radius);
     border: 2px solid transparent;
@@ -55,6 +55,7 @@
     border-radius: .5rem;
     font-size: var(--font-size-sm);
     font-weight: 700;
+    cursor: pointer;
 }
 .form__contact.ng-valid .btn-form {
     background-color: var(--color-green-light);

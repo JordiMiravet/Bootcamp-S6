@@ -7,8 +7,6 @@ import { BudgetsList } from "../budget/budgets-list/budgets-list";
   standalone: true,
   imports: [FormMainComponent, BudgetsList],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css'],
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

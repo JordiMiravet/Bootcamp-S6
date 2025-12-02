@@ -62,6 +62,7 @@
     border-radius: 50%;
     border: 0.01rem solid var(--color-grey-light);
     transition: border-color .05s ease-out;
+    cursor: pointer;
 }
 .panel__selection button:active{
     border-color: var(--color-grey-hard);
