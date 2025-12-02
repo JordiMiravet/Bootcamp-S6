@@ -41,7 +41,7 @@ La funcionalidad se ha construido por niveles:
 - `HTML`
 - `CSS` / `Bootstrap 5`
 - `TypeScript`
-- `Angular 20 `
+- `Angular 20`
 - Testing con `Jasmine` / `Karma`
 
 ---
@@ -77,10 +77,11 @@ src/
 
 #### Requisitos previos
 - Antes de instalar el proyecto asegúrate de tener:
-    - node < 22
-    - npm < 10
-    - Angular CLI (instalado globalmente)
     - Navegador web
+    - node > 22
+    - npm > 10
+    - Angular CLI (instalado globalmente)
+    
 
 1. Clona el repositorio:
 
@@ -112,12 +113,12 @@ src/
 
 Tras iniciar la aplicación, el usuario puede:
 
-1. **Seleccionar servicios** y configurar parámetros para calcular el presupuesto en tiempo real.
-2. **Abrir el modal de ayuda** para ver información sobre cada opción disponible.
-3. **Rellenar sus datos personales** mediante formularios reactivos con validación.
-4. **Generar y guardar varios presupuestos** desde la lista.
-5. **Ordenar y filtrar la lista** por nombre, fecha o importe total.
-6. **Compartir un presupuesto** mediante una URL generada automáticamente.
+1. Seleccionar servicios y configurar parámetros para calcular el presupuesto en tiempo real.
+2. Abrir el modal de ayuda para ver información sobre cada opción disponible.
+3. Rellenar sus datos personales mediante formularios reactivos con validación.
+4. Generar y guardar varios presupuestos desde la lista.
+5. Ordenar y filtrar la lista por nombre, fecha o importe total.
+6. Compartir un presupuesto mediante una URL generada automáticamente.
 
 ---
 
