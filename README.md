@@ -1,59 +1,134 @@
-# Sprint6
+# Sprint 6 - WebBudget form 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-TS-blue?style=for-the-badge)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-Jasmine-8A4Baf?style=for-the-badge&logo=jasmine&logoColor=white)
 
-## Development server
+## Descripción de la Aplicación:
 
-To start a local development server, run:
+Este proyecto consiste en una aplicación Angular diseñada para calcular presupuestos web de forma dinámica. El usuario puede seleccionar servicios, ajustar parámetros específicos, generar varios presupuestos, ordenarlos y filtrarlos, e incluso compartirlos mediante una URL personalizada.
 
-```bash
-ng serve
-```
+La aplicación está dividida en componentes independientes (`standalone`) que se comunican entre sí mediante Eventos, Services y Signals, e incorpora formularios reactivos, validaciones, gestión y filtrado de datos, y un modal generado con ayuda de `Bootstrap 5`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La funcionalidad se ha construido por niveles:
+- Cálculo reactivo del presupuesto
+- Popup de ayuda con Bootstrap Modal
+- Gestión de múltiples presupuestos
+- Ordenación y filtrado
+- Compartición de presupuestos vía URL generada dinámicamente
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Tecnologías
 
-```bash
-ng generate component component-name
-```
+- `HTML`
+- `CSS` / `Bootstrap 5`
+- `TypeScript`
+- `Angular 20 `
+- Testing con `Jasmine` / `Karma`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Estructura del Proyecto
 
 ```bash
-ng test
+src/
+ └─ app/
+     ├─ components/
+     │   ├─ budget/
+     │   │   ├─ budgets-list/
+     │   │   ├─ budget-list-toolbar/
+     │   │   └─ budget-item/
+     │   ├─ form/
+     │   │   ├─ form-main/
+     │   │   ├─ option-form/
+     │   │   ├─ contact-form/
+     │   │   ├─ panel/
+     │   │   └─ modal/
+     │   ├─ home/
+     │   └─ welcome/
+     ├─ header/
+     ├─ models/
+     │   └─ budget-item.model.ts
+     └─ services/
+         └─ budget.ts
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Instalación del proyecto
+
+#### Requisitos previos
+- Antes de instalar el proyecto asegúrate de tener:
+    - node < 22
+    - npm < 10
+    - Angular CLI (instalado globalmente)
+    - Navegador web
+
+1. Clona el repositorio:
 
 ```bash
-ng e2e
+    git clone https://github.com/JordiMiravet/Bootcamp-S6.git
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+2. Instala dependencias:
 
-## Additional Resources
+```bash
+    npm install
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Ejecuta el servidor:
+
+```bash
+    ng serve
+```
+
+4. Abrir en el navegador:
+
+```bash
+    http://localhost:4200
+```
+
+---
+
+## Vista Previa del proyecto
+
+1. Selección de servicios y cálculo
+
+2. Panel de páginas e idiomas
+
+3. Modal de ayuda
+
+4. Datos del usuario
+
+4. Listado ordenable 
+- Mediante input para filtrar por nombre
+- Mediante botones:
+    - 'Data' : Para ordenar por calendario, 
+    - 'Import' : Para ordenar por importe total (€)
+    - 'Nombre' : Para ordenar por nombre
+
+6. URL compartible
+
+---
+
+## Tests
+
+Incluye pruebas unitarias con Jasmine/Karma verificando:
+
+// Ahora lo pongo cuando acabe las otras secciones, que no me da la vida xD
+
+---
+
+## GH-Pages
+// Ahora cuando lo acabe lo pongo este tambien
+
+---
+
+## Autor
+
+```bash
+    Jordi Miravet – Bootcamp S6 : WebBudget App
+```

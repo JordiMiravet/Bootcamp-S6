@@ -1,7 +1,7 @@
 import { Component, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-modal',
+  selector: '[modal]',
   standalone: true,
   imports: [],
   templateUrl: './modal.html',

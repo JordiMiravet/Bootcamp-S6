@@ -1,5 +1,5 @@
-<div [formGroup]="panelForm" role="form">
-  <div class="panel__group" role="group" aria-labelledby="pagesLabel" aria-describedby="pagesDesc">
+<section [formGroup]="panelForm" role="form">
+  <fieldset class="panel__group" role="group" aria-labelledby="pagesLabel" aria-describedby="pagesDesc">
     <div class="panel__info">
       <button type="button" class="panel__btn-info" data-bs-toggle="modal" data-bs-target="#helpModal" (click)="emitHelpButton('pages')" aria-label="Informació sobre número de pàgines"
       >i</button>
@@ -11,9 +11,9 @@
       <input type="number" formControlName="pages" aria-labelledby="pagesLabel" aria-describedby="pagesDesc">
       <button type="button" (click)="updateValues('pages', +1)" aria-label="Afegir una pàgina">+</button>
     </div>
-  </div> <!-- Pages -->
+  </fieldset> <!-- Pages -->
 
-  <div class="panel__group" role="group" aria-labelledby="languagesLabel" aria-describedby="languagesDesc">
+  <fieldset class="panel__group" role="group" aria-labelledby="languagesLabel" aria-describedby="languagesDesc">
     <div class="panel__info">
       <button type="button" class="panel__btn-info" data-bs-toggle="modal" data-bs-target="#helpModal" (click)="emitHelpButton('languages')" aria-label="Informació sobre número de llenguatges"
       >i</button>
@@ -25,7 +25,7 @@
       <input type="number" formControlName="languages" aria-labelledby="languagesLabel" aria-describedby="languagesDesc">
       <button type="button" (click)="updateValues('languages', +1)" aria-label="Afegir un llenguatge">+</button>
     </div>
-  </div>
-</div> <!-- Languages -->
+  </fieldset>
+</section> <!-- Languages -->
 
-<app-modal [currentHelpButton]="helpButton"></app-modal> <!-- modal -->
+<section modal [currentHelpButton]="helpButton"></section> <!-- modal -->

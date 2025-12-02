@@ -1,16 +1,16 @@
-<div class="budgets__info" role="region" aria-labelledby="budgetsTitle">
+<section class="budgets__info" role="region" aria-labelledby="budgetsTitle">
     <h2 id="budgetsTitle">Pressupostos en curs:</h2>
-</div>
+</section>
 
-<app-budget-list-toolbar
+<div budget-list-toolbar
     role="toolbar"
     aria-label="Controls per filtrar i ordenar pressupostos"
     (searchByName)="searchByName($event)"
     (sortByDate)="sortByDate()"
     (sortByPrice)="sortByPrice()"
     (sortByAlphabetically)="sortByAlphabetically()"
-></app-budget-list-toolbar>
+></div>
 
 @for( budget of budgets(); track $index){
-    <app-budget-item [budgetItem]="budget"></app-budget-item>
+    <article budget-item [budgetItem]="budget"></article>
 }

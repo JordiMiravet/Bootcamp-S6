@@ -25,12 +25,12 @@
         }
     </fieldset> <!-- Web form -->
 
-    <div class="budget__total" aria-live="polite">
+    <fieldset class="budget__total" aria-live="polite">
         <h2>Preu pressuposat:</h2>
         <h3>{{result()}}<span>€</span></h3>
-    </div>
+    </fieldset>
     
-    <app-contact-form [formContact]="productForm"></app-contact-form> <!-- Contact Form -->
+    <fieldset contact-form [formContact]="productForm"></fieldset> <!-- Contact Form -->
     
 </form> <!-- form -->
 

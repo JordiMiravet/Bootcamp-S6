@@ -6,7 +6,7 @@ import { BudgetItem } from '../../../models/budget-item.model';
 import { BudgetListToolbarComponent } from "../budget-list-toolbar/budget-list-toolbar";
 
 @Component({
-  selector: 'app-budgets-list',
+  selector: '[budgets-list]',
   standalone: true,
   imports: [BudgetItemComponent, BudgetListToolbarComponent],
   templateUrl: './budgets-list.html',

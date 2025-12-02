@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BudgetItem } from '../../../models/budget-item.model'
 
 @Component({
-  selector: 'app-budget-item',
+  selector: '[budget-item]',
   standalone: true,
   imports: [],
   templateUrl: './budget-item.html',
