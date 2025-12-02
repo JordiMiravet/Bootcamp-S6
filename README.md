@@ -6,6 +6,21 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Tests](https://img.shields.io/badge/Tests-Jasmine-8A4Baf?style=for-the-badge&logo=jasmine&logoColor=white)
 
+## Index
+
+- [Descripción de la Aplicación](#descripción-de-la-aplicación)
+- [Tecnologías](#tecnologías)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación del Proyecto](#instalación-del-proyecto)
+- [Uso](#uso)
+- [Vista Previa del Proyecto](#vista-previa-del-proyecto)
+- [Tests](#tests)
+- [Contribución](#Contribución)
+- [GH-Pages](#gh-pages)
+- [Autor](#autor)
+
+---
+
 ## Descripción de la Aplicación:
 
 Este proyecto consiste en una aplicación Angular diseñada para calcular presupuestos web de forma dinámica. El usuario puede seleccionar servicios, ajustar parámetros específicos, generar varios presupuestos, ordenarlos y filtrarlos, e incluso compartirlos mediante una URL personalizada.
@@ -93,6 +108,19 @@ src/
 
 ---
 
+## Uso
+
+Tras iniciar la aplicación, el usuario puede:
+
+1. **Seleccionar servicios** y configurar parámetros para calcular el presupuesto en tiempo real.
+2. **Abrir el modal de ayuda** para ver información sobre cada opción disponible.
+3. **Rellenar sus datos personales** mediante formularios reactivos con validación.
+4. **Generar y guardar varios presupuestos** desde la lista.
+5. **Ordenar y filtrar la lista** por nombre, fecha o importe total.
+6. **Compartir un presupuesto** mediante una URL generada automáticamente.
+
+---
+
 ## Vista Previa del proyecto
 
 1. Selección de servicios y cálculo
@@ -128,6 +156,37 @@ src/
 Incluye pruebas unitarias con Jasmine/Karma verificando:
 
 // Ahora lo pongo cuando acabe las otras secciones, que no me da la vida xD
+
+---
+
+## Contribución
+ 
+Para colaborar en este proyecto, sigue estos pasos:
+
+1. Haz un **fork** del repositorio.
+
+```bash
+https://github.com/JordiMiravet/Bootcamp-S6.git
+```
+
+2. Crea una nueva rama para tu funcionalidad o corrección:
+
+```bash
+   git checkout -b feature/nueva-funcionalidad
+
+```
+
+3. Realiza los cambios y asegúrate de que los test pasan correctamente.
+
+4. Haz un commit siguiendo las Conventional Commits:
+
+```bash
+    feat: añade nuevo cálculo de presupuesto
+    fix: corrige error en el formulario de usuario
+    docs: actualiza documentación del modal de ayuda
+```
+
+5. Envía un Pull Request describiendo tus cambios.
 
 ---
 
