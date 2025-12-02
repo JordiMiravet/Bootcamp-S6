@@ -186,6 +186,7 @@ it('should calculate total price reactive to selected options', () => {
 
     expect(component.result()).toEqual(expectedTotal);
 });
+```
 
 #### Ejecutar test
 
