@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed } from '@angular/core';
 
 import { BudgetService } from '../../../services/budget';
 import { BudgetItemComponent } from "../budget-item/budget-item";
@@ -14,17 +14,17 @@ import { BudgetListToolbarComponent } from "../budget-list-toolbar/budget-list-t
 })
 export class BudgetsList {
   
-  budgets = signal<BudgetItem[]>([]);
-  originalBudgets: BudgetItem[] = [];
+  originalBudgets = computed(() => this.budgetService.budgets());
+  budgets!: typeof this.budgetService.budgets;
 
-  constructor(private budgetService: BudgetService){
-    this.originalBudgets = this.budgetService.budgets;
-    this.budgets.set(this.budgetService.budgets);
+  constructor(public budgetService: BudgetService){
+    this.budgets = this.budgetService.budgets;
   }
 
   sortByDate(){
-    const newOrder = [...this.budgets()].sort((a, b) => b.date.localeCompare(a.date))
-    this.budgets.set(newOrder)
+    this.budgets.update(values => 
+      [...values].sort((a, b) => b.date.localeCompare(a.date))
+    );
   }
 
   sortByPrice(){
@@ -39,9 +39,9 @@ export class BudgetsList {
   
   searchByName(searchText: string){
     if(!searchText) {
-      this.budgets.set(this.originalBudgets)
+      this.budgets.set(this.originalBudgets())
     } else {
-      const filteredName = this.originalBudgets.filter((value) => value.name.toLowerCase().includes(searchText.toLowerCase()))
+      const filteredName = this.originalBudgets().filter((value) => value.name.toLowerCase().includes(searchText.toLowerCase()))
       this.budgets.set(filteredName)
     }
   }

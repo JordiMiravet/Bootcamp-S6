@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BudgetItem } from '../models/budget-item.model';
 @Injectable({
   providedIn: 'root',
@@ -6,93 +6,92 @@ import { BudgetItem } from '../models/budget-item.model';
 
 export class BudgetService {
 
-  budgets : any[] = [ 
-
+  budgets = signal<BudgetItem[]>([ 
     {
       Seo: true,
       Ads: true,
       Web: true,
-      budget: 1230,
-      date: '2025-11-26',
-      email: 'f.lorca@gmail.com',
+      pages: 1,
       languages: 1,
       name: 'Federico García Lorca',
-      pages: 1,
-      telephone: '655184125'
+      telephone: '655184125',
+      email: 'f.lorca@gmail.com',
+      budget: 1230,
+      date: '2025-11-26',
     },
     {
       Seo: true,
       Ads: true,
       Web: true,
-      budget: 1260,
-      date: '2025-11-25',
-      email: 'a.machado@gmail.com',
+      pages: 1,
       languages: 2,
       name: 'Antonio Machado',
-      pages: 1,
-      telephone: '683914111'
+      telephone: '683914111',
+      email: 'a.machado@gmail.com',
+      budget: 1260,
+      date: '2025-11-25',
     },
     {
       Seo: true,
       Ads: true,
       Web: false,
-      budget: 700,
-      date: '2025-11-27',
-      email: 'Luis.G@gmail.com',
+      pages: 1,
       languages: 1,
       name: 'Luis de Góngora',
-      pages: 1,
-      telephone: '678195138'
+      telephone: '678195138',
+      email: 'Luis.G@gmail.com',
+      budget: 700,
+      date: '2025-11-27',
     },
     {
       Seo: true,
       Ads: true,
       Web: true,
-      budget: 1320,
-      date: '2025-11-27',
-      email: 'G.A.Becq@gmail.com',
+      pages: 1,
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
-      pages: 1,
-      telephone: '677385582'
+      telephone: '677385582',
+      email: 'G.A.Becq@gmail.com',
+      budget: 1320,
+      date: '2025-11-27',
     },
     {
       Seo: true,
       Ads: false,
       Web: true,
-      budget: 920,
-      date: '2025-11-28',
-      email: 'G.A.Becq@gmail.com',
+      pages: 1,
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
-      pages: 1,
-      telephone: '677385582'
+      telephone: '677385582',
+      email: 'G.A.Becq@gmail.com',
+      budget: 920,
+      date: '2025-11-28',
     },
     {
       Seo: false,
       Ads: true,
       Web: true,
-      budget: 1020,
-      date: '2025-11-29',
-      email: 'G.A.Becq@gmail.com',
+      pages: 1,
       languages: 4,
       name: 'Gustavo Adolfo Becquer',
-      pages: 1,
-      telephone: '677385582'
+      telephone: '677385582',
+      email: 'G.A.Becq@gmail.com',
+      budget: 1020,
+      date: '2025-11-29',
     },
     {
       Seo: true,
       Ads: true,
       Web: false,
-      budget: 700,
-      date: '2025-11-30',
-      email: 'a.machado@gmail.com',
+      pages: 1,
       languages: 1,
       name: 'Antonio Machado',
-      pages: 1,
-      telephone: '683914111'
+      telephone: '683914111',
+      email: 'a.machado@gmail.com',
+      budget: 700,
+      date: '2025-11-30',
     },
-  ]
+  ]);
 
   seoBasePrice : number = 300;
   adsBasePrice : number = 400;
@@ -105,7 +104,7 @@ export class BudgetService {
     return this.webBasePrice + this.calculateWebPrices(pages, languages);
   }
 
-  saveBudget(budget: BudgetItem){
-    this.budgets.push(budget);
+  saveBudget(budget: BudgetItem): void {
+    this.budgets.update(items => [...items, budget]);
   }
 }

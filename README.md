@@ -231,7 +231,7 @@ https://github.com/JordiMiravet/Bootcamp-S6.git
 ---
 
 ## GH-Pages
-// Ahora cuando lo acabe lo pongo este tambien
+[Abrir proyecto](https://jordimiravet.github.io/Bootcamp-S6/)
 
 ---
 

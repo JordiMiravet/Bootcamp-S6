@@ -9,7 +9,6 @@ import { ContactFormComponent } from "../contact-form/contact-form";
 import { PanelComponent } from "../panel/panel";
 import { BudgetItem } from '../../../models/budget-item.model';
 
-
 @Component({
   selector: '[form-main]',
   standalone: true,
@@ -78,21 +77,20 @@ export class FormMainComponent implements OnInit {
     this.productForm.get('pages')!.valueChanges.subscribe(value => this.pages.set(value));
     this.productForm.get('languages')!.valueChanges.subscribe(value => this.languages.set(value));
 
-
-  this.productForm.valueChanges.subscribe(form => {
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        Seo: form.Seo,
-        Ads: form.Ads,
-        Web: form.Web,
-        pages: form.pages,
-        languages: form.languages
-      },
-      queryParamsHandling: 'merge'
+    this.productForm.valueChanges.subscribe(form => {
+      this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams: {
+          Seo: form.Seo,
+          Ads: form.Ads,
+          Web: form.Web,
+          pages: form.pages,
+          languages: form.languages
+        },
+        queryParamsHandling: 'merge'
+      });
     });
-  });
-}
+  }
   get seoControl(): FormControl { return this.productForm.get('Seo') as FormControl; }
   get adsControl(): FormControl { return this.productForm.get('Ads') as FormControl; }
   get webControl(): FormControl { return this.productForm.get('Web') as FormControl; }
@@ -134,8 +132,6 @@ export class FormMainComponent implements OnInit {
         date: new Date().toISOString().split('T')[0], 
         budget: this.result() 
       }
-
-      console.log(budgetElement);
       this.budgetService.saveBudget(budgetElement);
     }
   }
